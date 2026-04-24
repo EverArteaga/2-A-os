@@ -32,7 +32,8 @@
             --radius-sm: 10px;
         }
 
-        html, body {
+        html,
+        body {
             min-height: 100%;
             background: var(--bg);
             font-family: 'DM Sans', sans-serif;
@@ -54,546 +55,1436 @@
             position: relative;
             overflow: hidden;
         }
+
         .lock-deco {
             position: absolute;
             border-radius: 50%;
             opacity: 0.12;
             animation: float 6s ease-in-out infinite;
         }
-        .lock-deco:nth-child(1) { width:200px;height:200px;background:var(--pink);top:-60px;left:-60px;animation-delay:0s; }
-        .lock-deco:nth-child(2) { width:150px;height:150px;background:var(--blue);bottom:-40px;right:-40px;animation-delay:2s; }
-        .lock-deco:nth-child(3) { width:100px;height:100px;background:#BA7517;top:40%;right:5%;animation-delay:4s; }
-        @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
-        .lock-emoji { font-size:64px;animation:pulse 2s ease-in-out infinite;position:relative;z-index:1; }
-        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
-        .lock-title { font-family:'Playfair Display',serif;font-size:32px;color:var(--pink);text-align:center;line-height:1.2;position:relative;z-index:1; }
-        .lock-title em { font-style:italic;color:var(--blue); }
-        .lock-sub { font-size:14px;color:var(--text-muted);text-align:center;position:relative;z-index:1; }
-        .lock-box { background:white;border-radius:var(--radius);box-shadow:0 8px 40px rgba(212,83,126,0.12);padding:28px 32px;display:flex;flex-direction:column;gap:16px;width:100%;max-width:340px;position:relative;z-index:1; }
-        .lock-label { font-size:12px;font-weight:500;color:var(--text-muted);letter-spacing:0.8px;text-transform:uppercase; }
-        .lock-input { width:100%;padding:14px 16px;border:2px solid var(--pink-mid);border-radius:var(--radius-sm);font-size:20px;font-family:'DM Sans',sans-serif;text-align:center;letter-spacing:6px;color:var(--pink);background:var(--pink-light);transition:border-color 0.2s;outline:none; }
-        .lock-input:focus { border-color:var(--pink); }
-        .lock-btn { width:100%;padding:14px;background:linear-gradient(135deg,var(--pink),#C0395F);color:white;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;transition:transform 0.15s,box-shadow 0.15s;box-shadow:0 4px 16px rgba(212,83,126,0.35); }
-        .lock-btn:hover { transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,83,126,0.4); }
-        .lock-btn:active { transform:scale(0.98); }
-        .lock-error { font-size:13px;color:#E24B4A;text-align:center;min-height:18px; }
+
+        .lock-deco:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            background: var(--pink);
+            top: -60px;
+            left: -60px;
+            animation-delay: 0s;
+        }
+
+        .lock-deco:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            background: var(--blue);
+            bottom: -40px;
+            right: -40px;
+            animation-delay: 2s;
+        }
+
+        .lock-deco:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            background: #BA7517;
+            top: 40%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-16px)
+            }
+        }
+
+        .lock-emoji {
+            font-size: 64px;
+            animation: pulse 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.1)
+            }
+        }
+
+        .lock-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: var(--pink);
+            text-align: center;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-title em {
+            font-style: italic;
+            color: var(--blue);
+        }
+
+        .lock-sub {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-box {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 40px rgba(212, 83, 126, 0.12);
+            padding: 28px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+            max-width: 340px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lock-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .lock-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid var(--pink-mid);
+            border-radius: var(--radius-sm);
+            font-size: 20px;
+            font-family: 'DM Sans', sans-serif;
+            text-align: center;
+            letter-spacing: 6px;
+            color: var(--pink);
+            background: var(--pink-light);
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .lock-input:focus {
+            border-color: var(--pink);
+        }
+
+        .lock-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--pink), #C0395F);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 4px 16px rgba(212, 83, 126, 0.35);
+        }
+
+        .lock-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(212, 83, 126, 0.4);
+        }
+
+        .lock-btn:active {
+            transform: scale(0.98);
+        }
+
+        .lock-error {
+            font-size: 13px;
+            color: #E24B4A;
+            text-align: center;
+            min-height: 18px;
+        }
 
         /* ── APP ── */
-        #app { display:none;flex-direction:column;min-height:100vh; }
-        .app-header { background:linear-gradient(135deg,#D4537E,#378ADD 50%,#639922);padding:20px 24px 16px;color:white;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 4px 24px rgba(212,83,126,0.3); }
-        .header-title { font-family:'Playfair Display',serif;font-size:22px;font-weight:500;line-height:1.2; }
-        .header-title em { font-style:italic; }
-        .header-sub { font-size:12px;opacity:0.85;margin-top:2px; }
-        .logout-btn { background:rgba(255,255,255,0.2);border:1.5px solid rgba(255,255,255,0.5);color:white;border-radius:20px;padding:7px 16px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;transition:background 0.2s; }
-        .logout-btn:hover { background:rgba(255,255,255,0.3); }
+        #app {
+            display: none;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-        .tabs { display:flex;background:white;border-bottom:2px solid #F4C0D1;position:sticky;top:74px;z-index:99; }
-        .tab { flex:1;padding:14px;text-align:center;font-size:14px;font-weight:500;cursor:pointer;color:var(--text-muted);border-bottom:3px solid transparent;transition:all 0.2s;font-family:'DM Sans',sans-serif; }
-        .tab.active { color:var(--pink);border-bottom-color:var(--pink);background:#FFF5F8; }
-        .tab-content { display:none;padding:20px;background:#FDF8F5;min-height:calc(100vh - 140px); }
-        .tab-content.active { display:block; }
+        .app-header {
+            background: linear-gradient(135deg, #D4537E, #378ADD 50%, #639922);
+            padding: 20px 24px 16px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 24px rgba(212, 83, 126, 0.3);
+        }
+
+        .header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .header-title em {
+            font-style: italic;
+        }
+
+        .header-sub {
+            font-size: 12px;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+
+        .logout-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            border-radius: 20px;
+            padding: 7px 16px;
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .logout-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .tabs {
+            display: flex;
+            background: white;
+            border-bottom: 2px solid #F4C0D1;
+            position: sticky;
+            top: 74px;
+            z-index: 99;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 14px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--text-muted);
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .tab.active {
+            color: var(--pink);
+            border-bottom-color: var(--pink);
+            background: #FFF5F8;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #FDF8F5;
+            min-height: calc(100vh - 140px);
+        }
+
+        .tab-content.active {
+            display: block;
+        }
 
         /* ── FOTOS — vista mejorada ── */
-        .upload-area { border:2.5px dashed var(--pink-mid);border-radius:var(--radius);padding:32px 20px;text-align:center;background:var(--pink-light);cursor:pointer;margin-bottom:20px;transition:all 0.2s; }
-        .upload-area:hover { background:#F4C0D1;border-color:var(--pink);transform:scale(1.01); }
-        .upload-area .icon { font-size:36px;margin-bottom:8px; }
-        .upload-area .txt { font-size:15px;font-weight:500;color:var(--pink); }
-        .upload-area .sub { font-size:12px;color:#D4537E;margin-top:4px; }
+        .upload-area {
+            border: 2.5px dashed var(--pink-mid);
+            border-radius: var(--radius);
+            padding: 32px 20px;
+            text-align: center;
+            background: var(--pink-light);
+            cursor: pointer;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .upload-area:hover {
+            background: #F4C0D1;
+            border-color: var(--pink);
+            transform: scale(1.01);
+        }
+
+        .upload-area .icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .upload-area .txt {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--pink);
+        }
+
+        .upload-area .sub {
+            font-size: 12px;
+            color: #D4537E;
+            margin-top: 4px;
+        }
 
         /* Selector de vista */
-        .view-toggle { display:flex;gap:8px;margin-bottom:16px;justify-content:flex-end; }
-        .view-btn { background:white;border:1.5px solid var(--pink-mid);border-radius:8px;padding:6px 12px;font-size:18px;cursor:pointer;transition:all 0.15s;line-height:1; }
-        .view-btn.active { background:var(--pink);border-color:var(--pink);color:white; }
+        .view-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            justify-content: flex-end;
+        }
+
+        .view-btn {
+            background: white;
+            border: 1.5px solid var(--pink-mid);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.15s;
+            line-height: 1;
+        }
+
+        .view-btn.active {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: white;
+        }
 
         /* Grid normal */
-        .photo-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px; }
-        /* Grid grande (2 columnas) */
-        .photo-grid.view-large { grid-template-columns:repeat(2,1fr);gap:14px; }
-        /* Lista */
-        .photo-grid.view-list { display:flex;flex-direction:column;gap:12px; }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 12px;
+        }
 
-        .photo-card { border-radius:var(--radius-sm);overflow:hidden;position:relative;aspect-ratio:1;background:var(--pink-mid);box-shadow:0 2px 12px rgba(0,0,0,0.08);cursor:pointer;transition:transform 0.2s,box-shadow 0.2s; }
-        .photo-card:hover { transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.14); }
-        .photo-card img { width:100%;height:100%;object-fit:cover;display:block; }
+        /* Grid grande (2 columnas) */
+        .photo-grid.view-large {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        /* Lista */
+        .photo-grid.view-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .photo-card {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1;
+            background: var(--pink-mid);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
 
         /* Vista lista — card horizontal */
-        .view-list .photo-card { aspect-ratio:unset;display:flex;align-items:stretch;height:110px; }
-        .view-list .photo-card img { width:110px;height:110px;flex-shrink:0;object-fit:cover; }
-        .view-list .photo-card-info { flex:1;padding:12px 14px;display:flex;flex-direction:column;justify-content:space-between;background:white; }
-        .view-list .photo-date-text { font-size:12px;color:var(--text-muted); }
-        .view-list .photo-reactions-row { display:flex;gap:6px;flex-wrap:wrap; }
+        .view-list .photo-card {
+            aspect-ratio: unset;
+            display: flex;
+            align-items: stretch;
+            height: 110px;
+        }
+
+        .view-list .photo-card img {
+            width: 110px;
+            height: 110px;
+            flex-shrink: 0;
+            object-fit: cover;
+        }
+
+        .view-list .photo-card-info {
+            flex: 1;
+            padding: 12px 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: white;
+        }
+
+        .view-list .photo-date-text {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .view-list .photo-reactions-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
 
         /* Vista grande — aspect ratio más alto */
-        .view-large .photo-card { aspect-ratio:4/5; }
+        .view-large .photo-card {
+            aspect-ratio: 4/5;
+        }
 
-        .photo-del { position:absolute;top:6px;right:6px;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:28px;height:28px;font-size:13px;cursor:pointer;display:none;align-items:center;justify-content:center;transition:background 0.15s; }
-        .photo-card:hover .photo-del { display:flex; }
-        .photo-del:hover { background:#E24B4A; }
-        .photo-date { position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.6));color:white;font-size:11px;padding:24px 8px 6px;text-align:center; }
-        .view-list .photo-date { display:none; }
+        .photo-del {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: rgba(0, 0, 0, 0.55);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 13px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+
+        .photo-card:hover .photo-del {
+            display: flex;
+        }
+
+        .photo-del:hover {
+            background: #E24B4A;
+        }
+
+        .photo-date {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+            color: white;
+            font-size: 11px;
+            padding: 24px 8px 6px;
+            text-align: center;
+        }
+
+        .view-list .photo-date {
+            display: none;
+        }
 
         /* Reacciones en fotos (overlay) */
-        .photo-reactions { position:absolute;bottom:6px;left:6px;display:flex;gap:4px;flex-wrap:wrap; }
-        .view-list .photo-reactions { display:none; }
-        .reaction-pill { background:rgba(0,0,0,0.5);border:none;border-radius:20px;padding:3px 8px;font-size:12px;cursor:pointer;color:white;display:flex;align-items:center;gap:3px;transition:transform 0.15s,background 0.15s;backdrop-filter:blur(4px); }
-        .reaction-pill:hover { transform:scale(1.15); }
-        .reaction-pill.mine { background:rgba(212,83,126,0.75); }
-        .reaction-pill .r-count { font-size:11px;font-weight:500; }
+        .photo-reactions {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .view-list .photo-reactions {
+            display: none;
+        }
+
+        .reaction-pill {
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 20px;
+            padding: 3px 8px;
+            font-size: 12px;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            transition: transform 0.15s, background 0.15s;
+            backdrop-filter: blur(4px);
+        }
+
+        .reaction-pill:hover {
+            transform: scale(1.15);
+        }
+
+        .reaction-pill.mine {
+            background: rgba(212, 83, 126, 0.75);
+        }
+
+        .reaction-pill .r-count {
+            font-size: 11px;
+            font-weight: 500;
+        }
 
         /* Botón de añadir reacción foto */
-        .photo-add-reaction { position:absolute;top:6px;left:6px;background:rgba(0,0,0,0.45);border:none;border-radius:50%;width:28px;height:28px;font-size:14px;cursor:pointer;display:none;align-items:center;justify-content:center;color:white;transition:background 0.15s;backdrop-filter:blur(4px); }
-        .photo-card:hover .photo-add-reaction { display:flex; }
-        .view-list .photo-card:hover .photo-add-reaction { display:none; }
+        .photo-add-reaction {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: rgba(0, 0, 0, 0.45);
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            font-size: 14px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.15s;
+            backdrop-filter: blur(4px);
+        }
+
+        .photo-card:hover .photo-add-reaction {
+            display: flex;
+        }
+
+        .view-list .photo-card:hover .photo-add-reaction {
+            display: none;
+        }
 
         /* ── LIGHTBOX mejorado ── */
-        #lightbox { display:none;position:fixed;inset:0;background:rgba(0,0,0,0.9);z-index:999;flex-direction:column;align-items:center;justify-content:center; }
-        #lightbox.open { display:flex; }
-        #lightbox-img { max-width:100%;max-height:80vh;border-radius:var(--radius-sm);object-fit:contain;transition:opacity 0.2s; }
-        #lightbox-close { position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:white;border-radius:50%;width:38px;height:38px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center; }
-        #lightbox-date { color:rgba(255,255,255,0.7);font-size:13px;margin-top:12px; }
-        #lightbox-reactions { display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center; }
-        .lb-reaction { background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);border-radius:20px;padding:6px 14px;font-size:15px;cursor:pointer;color:white;display:flex;align-items:center;gap:5px;transition:all 0.15s; }
-        .lb-reaction:hover { background:rgba(255,255,255,0.22);transform:scale(1.08); }
-        .lb-reaction.mine { background:rgba(212,83,126,0.6);border-color:var(--pink); }
-        .lb-reaction .r-count { font-size:13px;font-weight:500; }
-        #lightbox-nav { display:flex;gap:16px;margin-top:10px; }
-        .lb-nav-btn { background:rgba(255,255,255,0.12);border:none;color:white;border-radius:50%;width:42px;height:42px;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.15s; }
-        .lb-nav-btn:hover { background:rgba(255,255,255,0.25); }
-        .lb-nav-btn:disabled { opacity:0.25;cursor:default; }
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox.open {
+            display: flex;
+        }
+
+        #lightbox-img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--radius-sm);
+            object-fit: contain;
+            transition: opacity 0.2s;
+        }
+
+        #lightbox-close {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #lightbox-date {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 13px;
+            margin-top: 12px;
+        }
+
+        #lightbox-reactions {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .lb-reaction {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 15px;
+            cursor: pointer;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.15s;
+        }
+
+        .lb-reaction:hover {
+            background: rgba(255, 255, 255, 0.22);
+            transform: scale(1.08);
+        }
+
+        .lb-reaction.mine {
+            background: rgba(212, 83, 126, 0.6);
+            border-color: var(--pink);
+        }
+
+        .lb-reaction .r-count {
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        #lightbox-nav {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .lb-nav-btn {
+            background: rgba(255, 255, 255, 0.12);
+            border: none;
+            color: white;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s;
+        }
+
+        .lb-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .lb-nav-btn:disabled {
+            opacity: 0.25;
+            cursor: default;
+        }
 
         /* ── NOTAS ── */
-        .note-form-card { background:white;border-radius:var(--radius);padding:20px;box-shadow:0 2px 16px rgba(0,0,0,0.06);margin-bottom:20px; }
-        .form-label { font-size:11px;font-weight:500;color:var(--text-muted);letter-spacing:0.8px;text-transform:uppercase;margin-bottom:6px;display:block; }
-        .note-input, .note-textarea { width:100%;border:1.5px solid #F4C0D1;border-radius:var(--radius-sm);padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);background:white;transition:border-color 0.2s;outline:none;margin-bottom:14px; }
-        .note-input:focus, .note-textarea:focus { border-color:var(--pink); }
-        .note-textarea { min-height:90px;resize:vertical; }
-        .mood-row { display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px; }
-        .mood-chip { border:1.5px solid #F4C0D1;background:white;border-radius:20px;padding:6px 14px;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;color:#993556;transition:all 0.15s; }
-        .mood-chip.on { background:var(--pink);color:white;border-color:var(--pink); }
-        .save-btn { background:linear-gradient(135deg,var(--blue),#185FA5);color:white;border:none;border-radius:var(--radius-sm);padding:12px 24px;font-size:14px;font-weight:500;font-family:'DM Sans',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(55,138,221,0.35);transition:transform 0.15s; }
-        .save-btn:hover { transform:translateY(-1px); }
-        .save-btn:active { transform:scale(0.98); }
-        .save-btn:disabled { opacity:0.6;cursor:not-allowed;transform:none; }
+        .note-form-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+            margin-bottom: 20px;
+        }
 
-        .note-card { background:white;border-radius:var(--radius);padding:16px 18px;margin-bottom:12px;box-shadow:0 2px 12px rgba(0,0,0,0.05);border-left:5px solid var(--blue);position:relative;transition:transform 0.15s; }
-        .note-card:hover { transform:translateX(3px); }
-        .note-card-title { font-size:15px;font-weight:500;color:#185FA5;margin-bottom:4px;padding-right:30px; }
-        .note-card-mood { font-size:13px;margin-bottom:6px; }
-        .note-card-body { font-size:13px;color:var(--text-muted);line-height:1.65; }
-        .note-card-date { font-size:11px;color:#85B7EB;margin-top:8px; }
-        .note-del-btn { position:absolute;top:12px;right:12px;background:none;border:none;color:#B5D4F4;font-size:18px;cursor:pointer;line-height:1;transition:color 0.15s; }
-        .note-del-btn:hover { color:#E24B4A; }
+        .form-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .note-input,
+        .note-textarea {
+            width: 100%;
+            border: 1.5px solid #F4C0D1;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: white;
+            transition: border-color 0.2s;
+            outline: none;
+            margin-bottom: 14px;
+        }
+
+        .note-input:focus,
+        .note-textarea:focus {
+            border-color: var(--pink);
+        }
+
+        .note-textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .mood-row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+        }
+
+        .mood-chip {
+            border: 1.5px solid #F4C0D1;
+            background: white;
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            color: #993556;
+            transition: all 0.15s;
+        }
+
+        .mood-chip.on {
+            background: var(--pink);
+            color: white;
+            border-color: var(--pink);
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, var(--blue), #185FA5);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 4px 14px rgba(55, 138, 221, 0.35);
+            transition: transform 0.15s;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .save-btn:active {
+            transform: scale(0.98);
+        }
+
+        .save-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .note-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--blue);
+            position: relative;
+            transition: transform 0.15s;
+        }
+
+        .note-card:hover {
+            transform: translateX(3px);
+        }
+
+        .note-card-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #185FA5;
+            margin-bottom: 4px;
+            padding-right: 30px;
+        }
+
+        .note-card-mood {
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .note-card-body {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        .note-card-date {
+            font-size: 11px;
+            color: #85B7EB;
+            margin-top: 8px;
+        }
+
+        .note-del-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #B5D4F4;
+            font-size: 18px;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.15s;
+        }
+
+        .note-del-btn:hover {
+            color: #E24B4A;
+        }
 
         /* Reacciones en notas */
-        .note-reactions { display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;padding-top:10px;border-top:1px solid #F4EAF0; }
-        .note-reaction-btn { background:#FFF0F5;border:1.5px solid #F4C0D1;border-radius:20px;padding:5px 12px;font-size:13px;cursor:pointer;color:var(--pink);display:flex;align-items:center;gap:4px;transition:all 0.15s;font-family:'DM Sans',sans-serif; }
-        .note-reaction-btn:hover { background:var(--pink-mid);transform:scale(1.08); }
-        .note-reaction-btn.mine { background:var(--pink);color:white;border-color:var(--pink); }
-        .note-reaction-btn .r-count { font-size:12px;font-weight:500; }
-        .note-add-reaction { background:none;border:1.5px dashed #F4C0D1;border-radius:20px;padding:5px 10px;font-size:13px;cursor:pointer;color:var(--text-muted);transition:all 0.15s;font-family:'DM Sans',sans-serif; }
-        .note-add-reaction:hover { border-color:var(--pink);color:var(--pink); }
+        .note-reactions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #F4EAF0;
+        }
+
+        .note-reaction-btn {
+            background: #FFF0F5;
+            border: 1.5px solid #F4C0D1;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--pink);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.15s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .note-reaction-btn:hover {
+            background: var(--pink-mid);
+            transform: scale(1.08);
+        }
+
+        .note-reaction-btn.mine {
+            background: var(--pink);
+            color: white;
+            border-color: var(--pink);
+        }
+
+        .note-reaction-btn .r-count {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .note-add-reaction {
+            background: none;
+            border: 1.5px dashed #F4C0D1;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.15s;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .note-add-reaction:hover {
+            border-color: var(--pink);
+            color: var(--pink);
+        }
 
         /* ── PICKER DE EMOJIS ── */
-        .emoji-picker-overlay { position:fixed;inset:0;z-index:1000;display:none; }
-        .emoji-picker-overlay.open { display:block; }
-        .emoji-picker { position:fixed;background:white;border-radius:var(--radius);box-shadow:0 8px 40px rgba(0,0,0,0.18);padding:16px;z-index:1001;display:flex;flex-direction:column;gap:10px;min-width:200px; }
-        .emoji-picker-title { font-size:11px;font-weight:500;color:var(--text-muted);letter-spacing:0.8px;text-transform:uppercase; }
-        .emoji-picker-grid { display:flex;flex-wrap:wrap;gap:6px; }
-        .emoji-opt { background:none;border:1.5px solid transparent;border-radius:10px;padding:6px 10px;font-size:20px;cursor:pointer;transition:all 0.15s; }
-        .emoji-opt:hover { background:var(--pink-light);border-color:var(--pink-mid);transform:scale(1.15); }
+        .emoji-picker-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+        }
+
+        .emoji-picker-overlay.open {
+            display: block;
+        }
+
+        .emoji-picker {
+            position: fixed;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+            padding: 16px;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 200px;
+        }
+
+        .emoji-picker-title {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .emoji-picker-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .emoji-opt {
+            background: none;
+            border: 1.5px solid transparent;
+            border-radius: 10px;
+            padding: 6px 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .emoji-opt:hover {
+            background: var(--pink-light);
+            border-color: var(--pink-mid);
+            transform: scale(1.15);
+        }
 
         /* ── MODAL CONFIRMAR ELIMINAR ── */
-        .confirm-overlay { position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px); }
-        .confirm-overlay.open { display:flex; }
-        .confirm-box { background:white;border-radius:var(--radius);padding:28px 24px;max-width:320px;width:100%;text-align:center;box-shadow:0 12px 48px rgba(0,0,0,0.2); }
-        .confirm-icon { font-size:44px;margin-bottom:12px; }
-        .confirm-title { font-family:'Playfair Display',serif;font-size:20px;color:var(--text);margin-bottom:8px; }
-        .confirm-sub { font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:22px; }
-        .confirm-btns { display:flex;gap:10px; }
-        .confirm-cancel { flex:1;padding:12px;border:1.5px solid #E0D5CC;border-radius:var(--radius-sm);background:white;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;color:var(--text-muted);transition:all 0.15s; }
-        .confirm-cancel:hover { background:#F5F0EC; }
-        .confirm-delete { flex:1;padding:12px;border:none;border-radius:var(--radius-sm);background:linear-gradient(135deg,#E24B4A,#C03030);color:white;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;font-weight:500;transition:all 0.15s; }
-        .confirm-delete:hover { transform:translateY(-1px);box-shadow:0 4px 14px rgba(226,75,74,0.4); }
+        .confirm-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .confirm-overlay.open {
+            display: flex;
+        }
+
+        .confirm-box {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            max-width: 320px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+        }
+
+        .confirm-icon {
+            font-size: 44px;
+            margin-bottom: 12px;
+        }
+
+        .confirm-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .confirm-sub {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        .confirm-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .confirm-cancel {
+            flex: 1;
+            padding: 12px;
+            border: 1.5px solid #E0D5CC;
+            border-radius: var(--radius-sm);
+            background: white;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.15s;
+        }
+
+        .confirm-cancel:hover {
+            background: #F5F0EC;
+        }
+
+        .confirm-delete {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, #E24B4A, #C03030);
+            color: white;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.15s;
+        }
+
+        .confirm-delete:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(226, 75, 74, 0.4);
+        }
 
         /* ── MISC ── */
-        .counter-banner { background:linear-gradient(135deg,#FBEAF0,#E6F1FB);border-radius:var(--radius);padding:16px 20px;display:flex;gap:12px;margin-bottom:20px;border:1px solid #F4C0D1;align-items:center; }
-        .counter-banner .num { font-family:'Playfair Display',serif;font-size:36px;color:var(--pink);line-height:1; }
-        .counter-banner .lbl { font-size:13px;color:var(--text-muted); }
-        .counter-banner .lbl strong { color:var(--text);display:block;font-size:15px; }
-        .empty-state { text-align:center;padding:48px 20px;color:var(--text-muted);font-size:14px; }
-        .empty-state .big { font-size:40px;margin-bottom:12px; }
-        .spinner { display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,0.4);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;vertical-align:middle;margin-right:6px; }
-        @keyframes spin { to{transform:rotate(360deg)} }
-        .toast { position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#2C2015;color:white;padding:10px 22px;border-radius:20px;font-size:13px;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap; }
-        .toast.show { opacity:1; }
+        .counter-banner {
+            background: linear-gradient(135deg, #FBEAF0, #E6F1FB);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #F4C0D1;
+            align-items: center;
+        }
+
+        .counter-banner .num {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--pink);
+            line-height: 1;
+        }
+
+        .counter-banner .lbl {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .counter-banner .lbl strong {
+            color: var(--text);
+            display: block;
+            font-size: 15px;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 48px 20px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .empty-state .big {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2C2015;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-size: 13px;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .toast.show {
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body>
 
-<!-- LOCK -->
-<div id="lock-screen">
-    <div class="lock-deco"></div>
-    <div class="lock-deco"></div>
-    <div class="lock-deco"></div>
-    <div class="lock-emoji">🪷🌷</div>
-    <div class="lock-title">Nuestros<br /><em>Recuerdos</em></div>
-    <div class="lock-sub">Un espacio solo para los dos 🌈</div>
-    <div class="lock-box">
-        <div class="lock-label">Contraseña secreta</div>
-        <input class="lock-input" type="password" id="pass-input" placeholder="••••••••" maxlength="12" />
-        <button class="lock-btn" onclick="checkPass()">Entrar ✨</button>
-        <div class="lock-error" id="lock-error"></div>
-    </div>
-</div>
-
-<!-- LIGHTBOX mejorado -->
-<div id="lightbox">
-    <button id="lightbox-close" onclick="closeLightbox()">✕</button>
-    <img id="lightbox-img" src="" alt="" />
-    <div id="lightbox-date"></div>
-    <div id="lightbox-reactions"></div>
-    <div id="lightbox-nav">
-        <button class="lb-nav-btn" id="lb-prev" onclick="lightboxNav(-1)">‹</button>
-        <button class="lb-nav-btn" id="lb-next" onclick="lightboxNav(1)">›</button>
-    </div>
-</div>
-
-<!-- EMOJI PICKER -->
-<div class="emoji-picker-overlay" id="emoji-overlay" onclick="closeEmojiPicker()">
-</div>
-<div class="emoji-picker" id="emoji-picker" style="display:none;">
-    <div class="emoji-picker-title">Elige una reacción</div>
-    <div class="emoji-picker-grid">
-        <button class="emoji-opt" onclick="selectEmoji('❤️')">❤️</button>
-        <button class="emoji-opt" onclick="selectEmoji('😍')">😍</button>
-        <button class="emoji-opt" onclick="selectEmoji('🥰')">🥰</button>
-        <button class="emoji-opt" onclick="selectEmoji('😂')">😂</button>
-        <button class="emoji-opt" onclick="selectEmoji('😮')">😮</button>
-        <button class="emoji-opt" onclick="selectEmoji('🔥')">🔥</button>
-        <button class="emoji-opt" onclick="selectEmoji('✨')">✨</button>
-        <button class="emoji-opt" onclick="selectEmoji('💫')">💫</button>
-        <button class="emoji-opt" onclick="selectEmoji('🌊')">🌊</button>
-        <button class="emoji-opt" onclick="selectEmoji('💙')">💙</button>
-    </div>
-</div>
-
-<!-- MODAL CONFIRMAR ELIMINAR -->
-<div class="confirm-overlay" id="confirm-overlay">
-    <div class="confirm-box">
-        <div class="confirm-icon">🗑️</div>
-        <div class="confirm-title" id="confirm-title">¿Eliminar recuerdo?</div>
-        <div class="confirm-sub" id="confirm-sub">Esta acción no se puede deshacer.</div>
-        <div class="confirm-btns">
-            <button class="confirm-cancel" onclick="closeConfirm()">Cancelar</button>
-            <button class="confirm-delete" id="confirm-ok">Sí, eliminar</button>
-        </div>
-    </div>
-</div>
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<!-- APP -->
-<div id="app">
-    <div class="app-header">
-        <div>
-            <div class="header-title">💖 Nuestros <em>Recuerdos</em></div>
-            <div class="header-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
-        </div>
-        <button class="logout-btn" onclick="logout()">Salir</button>
-    </div>
-
-    <div class="tabs">
-        <div class="tab active" onclick="switchTab('fotos',this)">📸 Fotos</div>
-        <div class="tab" onclick="switchTab('notas',this)">📝 Notas</div>
-    </div>
-
-    <!-- TAB FOTOS -->
-    <div id="tab-fotos" class="tab-content active">
-        <div class="counter-banner">
-            <div class="num" id="photo-count">0</div>
-            <div class="lbl"><strong>Momentos guardados</strong>Cada foto, un recuerdo eterno</div>
-        </div>
-        <div class="upload-area" onclick="document.getElementById('file-input').click()">
-            <div class="icon">🌈</div>
-            <div class="txt">Agregar una foto</div>
-            <div class="sub">Toca para seleccionar desde tu galería</div>
-        </div>
-        <input type="file" id="file-input" accept="image/*" style="display:none" onchange="addPhoto(event)" />
-
-        <!-- Selector de vista -->
-        <div class="view-toggle">
-            <button class="view-btn active" id="vbtn-grid" onclick="setView('grid')" title="Cuadrícula">⊞</button>
-            <button class="view-btn" id="vbtn-large" onclick="setView('large')" title="Grande">▣</button>
-            <button class="view-btn" id="vbtn-list" onclick="setView('list')" title="Lista">☰</button>
-        </div>
-
-        <div id="photo-grid" class="photo-grid"></div>
-        <div id="photos-empty" class="empty-state">
-            <div class="big">📷</div>
-            Aún no hay fotos. ¡Agrega la primera!
+    <!-- LOCK -->
+    <div id="lock-screen">
+        <div class="lock-deco"></div>
+        <div class="lock-deco"></div>
+        <div class="lock-deco"></div>
+        <div class="lock-emoji">🪷🌷</div>
+        <div class="lock-title">Nuestros<br /><em>Recuerdos</em></div>
+        <div class="lock-sub">Un espacio solo para los dos 🌈</div>
+        <div class="lock-box">
+            <div class="lock-label">Contraseña secreta</div>
+            <input class="lock-input" type="password" id="pass-input" placeholder="••••••••" maxlength="12" />
+            <button class="lock-btn" onclick="checkPass()">Entrar ✨</button>
+            <div class="lock-error" id="lock-error"></div>
         </div>
     </div>
 
-    <!-- TAB NOTAS -->
-    <div id="tab-notas" class="tab-content">
-        <div class="note-form-card">
-            <label class="form-label">Título del momento</label>
-            <input class="note-input" id="note-title" placeholder="Ej: Primera vez en la playa..." />
-            <label class="form-label">¿Cómo se sintió?</label>
-            <div class="mood-row">
-                <button class="mood-chip" onclick="pickMood(this,'💛 Feliz')">💛 Feliz</button>
-                <button class="mood-chip" onclick="pickMood(this,'🩷 Amor')">🩷 Amor</button>
-                <button class="mood-chip" onclick="pickMood(this,'🌊 Emocionante')">🌊 Emocionante</button>
-                <button class="mood-chip" onclick="pickMood(this,'🌿 Tranquilo')">🌿 Tranquilo</button>
-                <button class="mood-chip" onclick="pickMood(this,'🎉 Especial')">🎉 Especial</button>
+    <!-- LIGHTBOX mejorado -->
+    <div id="lightbox">
+        <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightbox-img" src="" alt="" />
+        <div id="lightbox-date"></div>
+        <div id="lightbox-reactions"></div>
+        <div id="lightbox-nav">
+            <button class="lb-nav-btn" id="lb-prev" onclick="lightboxNav(-1)">‹</button>
+            <button class="lb-nav-btn" id="lb-next" onclick="lightboxNav(1)">›</button>
+        </div>
+    </div>
+
+    <!-- EMOJI PICKER -->
+    <div class="emoji-picker-overlay" id="emoji-overlay" onclick="closeEmojiPicker()">
+    </div>
+    <div class="emoji-picker" id="emoji-picker" style="display:none;">
+        <div class="emoji-picker-title">Elige una reacción</div>
+        <div class="emoji-picker-grid">
+            <button class="emoji-opt" onclick="selectEmoji('❤️')">❤️</button>
+            <button class="emoji-opt" onclick="selectEmoji('😍')">😍</button>
+            <button class="emoji-opt" onclick="selectEmoji('🥰')">🥰</button>
+            <button class="emoji-opt" onclick="selectEmoji('😂')">😂</button>
+            <button class="emoji-opt" onclick="selectEmoji('😮')">😮</button>
+            <button class="emoji-opt" onclick="selectEmoji('🔥')">🔥</button>
+            <button class="emoji-opt" onclick="selectEmoji('✨')">✨</button>
+            <button class="emoji-opt" onclick="selectEmoji('💫')">💫</button>
+            <button class="emoji-opt" onclick="selectEmoji('🌊')">🌊</button>
+            <button class="emoji-opt" onclick="selectEmoji('💙')">💙</button>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMAR ELIMINAR -->
+    <div class="confirm-overlay" id="confirm-overlay">
+        <div class="confirm-box">
+            <div class="confirm-icon">🗑️</div>
+            <div class="confirm-title" id="confirm-title">¿Eliminar recuerdo?</div>
+            <div class="confirm-sub" id="confirm-sub">Esta acción no se puede deshacer.</div>
+            <div class="confirm-btns">
+                <button class="confirm-cancel" onclick="closeConfirm()">Cancelar</button>
+                <button class="confirm-delete" id="confirm-ok">Sí, eliminar</button>
             </div>
-            <label class="form-label">Cuéntalo</label>
-            <textarea class="note-textarea" id="note-body" placeholder="Escribe lo que vivieron juntos..."></textarea>
-            <button class="save-btn" id="save-note-btn" onclick="saveNote()">Guardar recuerdo 💾</button>
-        </div>
-        <div id="notes-list"></div>
-        <div id="notes-empty" class="empty-state">
-            <div class="big">✍️</div>
-            Escribe su primer recuerdo juntos
         </div>
     </div>
-</div>
 
-<script>
-const SUPABASE_URL = "https://qxlfuexvnsopzajwycnz.supabase.co";
-const SUPABASE_KEY = "sb_publishable_4wU0PIG58Q8o3_HlO-QZYA_e_sJA6Pl";
-const PASSWORD    = "18042024";
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
 
-const { createClient } = supabase;
-const db = createClient(SUPABASE_URL, SUPABASE_KEY);
+    <!-- APP -->
+    <div id="app">
+        <div class="app-header">
+            <div>
+                <div class="header-title">💖 Nuestros <em>Recuerdos</em></div>
+                <div class="header-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
+            </div>
+            <button class="logout-btn" onclick="logout()">Salir</button>
+        </div>
 
-let mood        = "";
-let currentView = "grid";   // grid | large | list
-let allPhotos   = [];       // caché para el lightbox
-let lbIndex     = 0;        // índice activo en el lightbox
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('fotos',this)">📸 Fotos</div>
+            <div class="tab" onclick="switchTab('notas',this)">📝 Notas</div>
+        </div>
 
-// ── REACCIONES: emoji usable ──────────────────────────────────
-// Guardamos reacciones en localStorage con clave "r_photo_{id}" o "r_note_{id}"
-// y en Supabase en la columna reactions JSONB (si no existe, no rompe nada).
-// Formato en Supabase: { "❤️": 2, "😍": 1 }
-// Formato local: Set de emojis que YO puse
+        <!-- TAB FOTOS -->
+        <div id="tab-fotos" class="tab-content active">
+            <div class="counter-banner">
+                <div class="num" id="photo-count">0</div>
+                <div class="lbl"><strong>Momentos guardados</strong>Cada foto, un recuerdo eterno</div>
+            </div>
+            <div class="upload-area" onclick="document.getElementById('file-input').click()">
+                <div class="icon">🌈</div>
+                <div class="txt">Agregar una foto</div>
+                <div class="sub">Toca para seleccionar desde tu galería</div>
+            </div>
+            <input type="file" id="file-input" accept="image/*" style="display:none" onchange="addPhoto(event)" />
 
-function getMyReactions(type, id) {
-    try { return new Set(JSON.parse(localStorage.getItem(`r_${type}_${id}`) || "[]")); }
-    catch { return new Set(); }
-}
-function setMyReaction(type, id, emoji, active) {
-    const s = getMyReactions(type, id);
-    active ? s.add(emoji) : s.delete(emoji);
-    localStorage.setItem(`r_${type}_${id}`, JSON.stringify([...s]));
-}
+            <!-- Selector de vista -->
+            <div class="view-toggle">
+                <button class="view-btn active" id="vbtn-grid" onclick="setView('grid')" title="Cuadrícula">⊞</button>
+                <button class="view-btn" id="vbtn-large" onclick="setView('large')" title="Grande">▣</button>
+                <button class="view-btn" id="vbtn-list" onclick="setView('list')" title="Lista">☰</button>
+            </div>
 
-// ── EMOJI PICKER ──────────────────────────────────────────────
-let pickerCallback = null;
-const _pickerTarget = { type: null, id: null, idx: null };
+            <div id="photo-grid" class="photo-grid"></div>
+            <div id="photos-empty" class="empty-state">
+                <div class="big">📷</div>
+                Aún no hay fotos. ¡Agrega la primera!
+            </div>
+        </div>
 
-function openEmojiPickerForNote(anchorEl, noteId) {
-    _pickerTarget.type = "note";
-    _pickerTarget.id   = noteId;
-    pickerCallback = null;
-    _openEmojiPickerAt(anchorEl);
-}
-function openEmojiPickerForPhoto(anchorEl, photoId, idx) {
-    _pickerTarget.type = "photo";
-    _pickerTarget.id   = photoId;
-    _pickerTarget.idx  = idx;
-    pickerCallback = null;
-    _openEmojiPickerAt(anchorEl);
-}
-function _openEmojiPickerAt(anchorEl) {
-    const picker  = document.getElementById("emoji-picker");
-    const overlay = document.getElementById("emoji-overlay");
-    const rect    = anchorEl.getBoundingClientRect();
-    picker.style.display = "flex";
-    overlay.classList.add("open");
-    let top  = rect.bottom + 8;
-    let left = rect.left;
-    if (top + 180 > window.innerHeight) top = rect.top - 180;
-    if (left + 220 > window.innerWidth) left = window.innerWidth - 228;
-    picker.style.top  = top  + "px";
-    picker.style.left = left + "px";
-}
-function openEmojiPicker(anchorEl, callback) {
-    pickerCallback = callback;
-    _pickerTarget.type = null;
-    _openEmojiPickerAt(anchorEl);
-}
-function closeEmojiPicker() {
-    document.getElementById("emoji-picker").style.display = "none";
-    document.getElementById("emoji-overlay").classList.remove("open");
-    pickerCallback = null;
-}
-function selectEmoji(emoji) {
-    closeEmojiPicker();
-    if (_pickerTarget.type === "note") {
-        toggleNoteReaction(_pickerTarget.id, emoji);
-        _pickerTarget.type = null;
-    } else if (_pickerTarget.type === "photo") {
-        togglePhotoReaction(_pickerTarget.id, emoji, _pickerTarget.idx);
-        _pickerTarget.type = null;
-    } else if (pickerCallback) {
-        pickerCallback(emoji);
-    }
-}
+        <!-- TAB NOTAS -->
+        <div id="tab-notas" class="tab-content">
+            <div class="note-form-card">
+                <label class="form-label">Título del momento</label>
+                <input class="note-input" id="note-title" placeholder="Ej: Primera vez en la playa..." />
+                <label class="form-label">¿Cómo se sintió?</label>
+                <div class="mood-row">
+                    <button class="mood-chip" onclick="pickMood(this,'💛 Feliz')">💛 Feliz</button>
+                    <button class="mood-chip" onclick="pickMood(this,'🩷 Amor')">🩷 Amor</button>
+                    <button class="mood-chip" onclick="pickMood(this,'🌊 Emocionante')">🌊 Emocionante</button>
+                    <button class="mood-chip" onclick="pickMood(this,'🌿 Tranquilo')">🌿 Tranquilo</button>
+                    <button class="mood-chip" onclick="pickMood(this,'🎉 Especial')">🎉 Especial</button>
+                </div>
+                <label class="form-label">Cuéntalo</label>
+                <textarea class="note-textarea" id="note-body"
+                    placeholder="Escribe lo que vivieron juntos..."></textarea>
+                <button class="save-btn" id="save-note-btn" onclick="saveNote()">Guardar recuerdo 💾</button>
+            </div>
+            <div id="notes-list"></div>
+            <div id="notes-empty" class="empty-state">
+                <div class="big">✍️</div>
+                Escribe su primer recuerdo juntos
+            </div>
+        </div>
+    </div>
 
-// ── CONFIRM MODAL ─────────────────────────────────────────────
-let confirmResolve = null;
+    <script>
+        const SUPABASE_URL = "https://qxlfuexvnsopzajwycnz.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4bGZ1ZXh2bnNvcHphand5Y256Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NjU2ODUsImV4cCI6MjA5MjA0MTY4NX0.3UpiBM7dbylmsIQV-O0I8Fs-akXHzvyVVC5w8P7EhlA";
+        const PASSWORD = "18042024";
 
-function showConfirm(title, sub) {
-    document.getElementById("confirm-title").textContent = title;
-    document.getElementById("confirm-sub").textContent   = sub;
-    document.getElementById("confirm-overlay").classList.add("open");
-    return new Promise(resolve => {
-        confirmResolve = resolve;
-        document.getElementById("confirm-ok").onclick = () => { closeConfirm(); resolve(true); };
-    });
-}
-function closeConfirm() {
-    document.getElementById("confirm-overlay").classList.remove("open");
-    if (confirmResolve) { confirmResolve(false); confirmResolve = null; }
-}
+        const { createClient } = supabase;
+        const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// ── TOAST ─────────────────────────────────────────────────────
-function showToast(msg) {
-    const t = document.getElementById("toast");
-    t.textContent = msg;
-    t.classList.add("show");
-    setTimeout(() => t.classList.remove("show"), 2500);
-}
+        let mood = "";
+        let currentView = "grid";   // grid | large | list
+        let allPhotos = [];       // caché para el lightbox
+        let lbIndex = 0;        // índice activo en el lightbox
 
-// ── AUTH ──────────────────────────────────────────────────────
-function checkPass() {
-    const v = document.getElementById("pass-input").value;
-    if (v === PASSWORD) {
-        document.getElementById("lock-screen").style.display = "none";
-        const app = document.getElementById("app");
-        app.style.display = "flex";
-        app.style.flexDirection = "column";
-        loadAll();
-    } else {
-        const e = document.getElementById("lock-error");
-        e.textContent = "Contraseña incorrecta. Pista: fecha de aniversario 💝";
-        document.getElementById("pass-input").value = "";
-        setTimeout(() => e.textContent = "", 3500);
-    }
-}
-document.getElementById("pass-input").addEventListener("keydown", e => { if (e.key === "Enter") checkPass(); });
+        // ── REACCIONES: emoji usable ──────────────────────────────────
+        // Guardamos reacciones en localStorage con clave "r_photo_{id}" o "r_note_{id}"
+        // y en Supabase en la columna reactions JSONB (si no existe, no rompe nada).
+        // Formato en Supabase: { "❤️": 2, "😍": 1 }
+        // Formato local: Set de emojis que YO puse
 
-function logout() {
-    document.getElementById("app").style.display = "none";
-    document.getElementById("lock-screen").style.display = "flex";
-    document.getElementById("pass-input").value = "";
-}
+        function getMyReactions(type, id) {
+            try { return new Set(JSON.parse(localStorage.getItem(`r_${type}_${id}`) || "[]")); }
+            catch { return new Set(); }
+        }
+        function setMyReaction(type, id, emoji, active) {
+            const s = getMyReactions(type, id);
+            active ? s.add(emoji) : s.delete(emoji);
+            localStorage.setItem(`r_${type}_${id}`, JSON.stringify([...s]));
+        }
 
-function switchTab(name, el) {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
-    document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
-    el.classList.add("active");
-    document.getElementById("tab-" + name).classList.add("active");
-}
+        // ── EMOJI PICKER ──────────────────────────────────────────────
+        let pickerCallback = null;
+        const _pickerTarget = { type: null, id: null, idx: null };
 
-function pickMood(btn, val) {
-    document.querySelectorAll(".mood-chip").forEach(b => b.classList.remove("on"));
-    btn.classList.add("on");
-    mood = val;
-}
+        function openEmojiPickerForNote(anchorEl, noteId) {
+            _pickerTarget.type = "note";
+            _pickerTarget.id = noteId;
+            pickerCallback = null;
+            _openEmojiPickerAt(anchorEl);
+        }
+        function openEmojiPickerForPhoto(anchorEl, photoId, idx) {
+            _pickerTarget.type = "photo";
+            _pickerTarget.id = photoId;
+            _pickerTarget.idx = idx;
+            pickerCallback = null;
+            _openEmojiPickerAt(anchorEl);
+        }
+        function _openEmojiPickerAt(anchorEl) {
+            const picker = document.getElementById("emoji-picker");
+            const overlay = document.getElementById("emoji-overlay");
+            const rect = anchorEl.getBoundingClientRect();
+            picker.style.display = "flex";
+            overlay.classList.add("open");
+            let top = rect.bottom + 8;
+            let left = rect.left;
+            if (top + 180 > window.innerHeight) top = rect.top - 180;
+            if (left + 220 > window.innerWidth) left = window.innerWidth - 228;
+            picker.style.top = top + "px";
+            picker.style.left = left + "px";
+        }
+        function openEmojiPicker(anchorEl, callback) {
+            pickerCallback = callback;
+            _pickerTarget.type = null;
+            _openEmojiPickerAt(anchorEl);
+        }
+        function closeEmojiPicker() {
+            document.getElementById("emoji-picker").style.display = "none";
+            document.getElementById("emoji-overlay").classList.remove("open");
+            pickerCallback = null;
+        }
+        function selectEmoji(emoji) {
+            closeEmojiPicker();
+            if (_pickerTarget.type === "note") {
+                toggleNoteReaction(_pickerTarget.id, emoji);
+                _pickerTarget.type = null;
+            } else if (_pickerTarget.type === "photo") {
+                togglePhotoReaction(_pickerTarget.id, emoji, _pickerTarget.idx);
+                _pickerTarget.type = null;
+            } else if (pickerCallback) {
+                pickerCallback(emoji);
+            }
+        }
 
-async function loadAll() {
-    await Promise.all([loadPhotos(), loadNotes()]);
-}
+        // ── CONFIRM MODAL ─────────────────────────────────────────────
+        let confirmResolve = null;
 
-// ── VISTA DE FOTOS ────────────────────────────────────────────
-function setView(v) {
-    currentView = v;
-    ["grid","large","list"].forEach(n => {
-        document.getElementById(`vbtn-${n}`).classList.toggle("active", n === v);
-    });
-    const grid = document.getElementById("photo-grid");
-    grid.className = "photo-grid" + (v === "grid" ? "" : ` view-${v}`);
-    // Re-renderizar para ajustar el HTML de cada card (lista necesita columna de info)
-    renderPhotos(allPhotos);
-}
+        function showConfirm(title, sub) {
+            document.getElementById("confirm-title").textContent = title;
+            document.getElementById("confirm-sub").textContent = sub;
+            document.getElementById("confirm-overlay").classList.add("open");
+            return new Promise(resolve => {
+                confirmResolve = resolve;
+                document.getElementById("confirm-ok").onclick = () => { closeConfirm(); resolve(true); };
+            });
+        }
+        function closeConfirm() {
+            document.getElementById("confirm-overlay").classList.remove("open");
+            if (confirmResolve) { confirmResolve(false); confirmResolve = null; }
+        }
 
-// ── FOTOS ─────────────────────────────────────────────────────
-function addPhoto(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const canvas = document.createElement("canvas");
-    const img    = new Image();
-    const reader = new FileReader();
-    reader.onload = e => {
-        img.onload = async () => {
-            const MAX = 800;
-            let w = img.width, h = img.height;
-            if (w > h && w > MAX) { h = h * MAX / w; w = MAX; }
-            else if (h > MAX)     { w = w * MAX / h; h = MAX; }
-            canvas.width = w; canvas.height = h;
-            canvas.getContext("2d").drawImage(img, 0, 0, w, h);
-            const src  = canvas.toDataURL("image/jpeg", 0.75);
-            const date = new Date().toLocaleDateString("es-CO", { day:"numeric", month:"long", year:"numeric" });
-            const { error } = await db.from("photos").insert({ src, date, reactions: {} });
-            if (error) { showToast("❌ Error al subir la foto"); return; }
-            showToast("📸 Foto guardada para los dos");
+        // ── TOAST ─────────────────────────────────────────────────────
+        function showToast(msg) {
+            const t = document.getElementById("toast");
+            t.textContent = msg;
+            t.classList.add("show");
+            setTimeout(() => t.classList.remove("show"), 2500);
+        }
+
+        // ── AUTH ──────────────────────────────────────────────────────
+        function checkPass() {
+            const v = document.getElementById("pass-input").value;
+            if (v === PASSWORD) {
+                document.getElementById("lock-screen").style.display = "none";
+                const app = document.getElementById("app");
+                app.style.display = "flex";
+                app.style.flexDirection = "column";
+                loadAll();
+            } else {
+                const e = document.getElementById("lock-error");
+                e.textContent = "Contraseña incorrecta. Pista: fecha de aniversario 💝";
+                document.getElementById("pass-input").value = "";
+                setTimeout(() => e.textContent = "", 3500);
+            }
+        }
+        document.getElementById("pass-input").addEventListener("keydown", e => { if (e.key === "Enter") checkPass(); });
+
+        function logout() {
+            document.getElementById("app").style.display = "none";
+            document.getElementById("lock-screen").style.display = "flex";
+            document.getElementById("pass-input").value = "";
+        }
+
+        function switchTab(name, el) {
+            document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+            document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+            el.classList.add("active");
+            document.getElementById("tab-" + name).classList.add("active");
+        }
+
+        function pickMood(btn, val) {
+            document.querySelectorAll(".mood-chip").forEach(b => b.classList.remove("on"));
+            btn.classList.add("on");
+            mood = val;
+        }
+
+        async function loadAll() {
+            await Promise.all([loadPhotos(), loadNotes()]);
+        }
+
+        // ── VISTA DE FOTOS ────────────────────────────────────────────
+        function setView(v) {
+            currentView = v;
+            ["grid", "large", "list"].forEach(n => {
+                document.getElementById(`vbtn-${n}`).classList.toggle("active", n === v);
+            });
+            const grid = document.getElementById("photo-grid");
+            grid.className = "photo-grid" + (v === "grid" ? "" : ` view-${v}`);
+            // Re-renderizar para ajustar el HTML de cada card (lista necesita columna de info)
+            renderPhotos(allPhotos);
+        }
+
+        // ── FOTOS ─────────────────────────────────────────────────────
+        function addPhoto(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const canvas = document.createElement("canvas");
+            const img = new Image();
+            const reader = new FileReader();
+            reader.onload = e => {
+                img.onload = async () => {
+                    const MAX = 600;
+                    let w = img.width, h = img.height;
+                    if (w > h && w > MAX) { h = h * MAX / w; w = MAX; }
+                    else if (h > MAX) { w = w * MAX / h; h = MAX; }
+                    canvas.width = w; canvas.height = h;
+                    canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+                    const src = canvas.toDataURL("image/jpeg", 0.65);
+                    const date = new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
+                    showToast("⏳ Subiendo foto...");
+                    const { error } = await db.from("photos").insert({ src, date, reactions: {} });
+                    if (error) {
+                        console.error("Error Supabase:", error);
+                        showToast("❌ Error: " + (error.message || "No se pudo subir"));
+                        return;
+                    }
+                    showToast("📸 Foto guardada para los dos");
+                    await loadPhotos();
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+            event.target.value = "";
+        }
+
+        async function deletePhoto(id) {
+            const ok = await showConfirm("¿Eliminar esta foto?", "Esta foto desaparecerá para los dos y no se puede recuperar.");
+            if (!ok) return;
+            const { error } = await db.from("photos").delete().eq("id", id);
+            if (error) { showToast("❌ Error al eliminar"); return; }
+            showToast("🗑️ Foto eliminada");
             await loadPhotos();
-        };
-        img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-    event.target.value = "";
-}
+        }
 
-async function deletePhoto(id) {
-    const ok = await showConfirm("¿Eliminar esta foto?", "Esta foto desaparecerá para los dos y no se puede recuperar.");
-    if (!ok) return;
-    const { error } = await db.from("photos").delete().eq("id", id);
-    if (error) { showToast("❌ Error al eliminar"); return; }
-    showToast("🗑️ Foto eliminada");
-    await loadPhotos();
-}
+        async function loadPhotos() {
+            const { data, error } = await db.from("photos").select("*").order("created_at", { ascending: false });
+            if (error) { console.error(error); return; }
+            allPhotos = data || [];
+            renderPhotos(allPhotos);
+        }
 
-async function loadPhotos() {
-    const { data, error } = await db.from("photos").select("*").order("created_at", { ascending: false });
-    if (error) { console.error(error); return; }
-    allPhotos = data || [];
-    renderPhotos(allPhotos);
-}
+        function renderPhotos(photos) {
+            const grid = document.getElementById("photo-grid");
+            const empty = document.getElementById("photos-empty");
+            document.getElementById("photo-count").textContent = photos.length;
+            if (!photos.length) { grid.innerHTML = ""; empty.style.display = "block"; return; }
+            empty.style.display = "none";
 
-function renderPhotos(photos) {
-    const grid  = document.getElementById("photo-grid");
-    const empty = document.getElementById("photos-empty");
-    document.getElementById("photo-count").textContent = photos.length;
-    if (!photos.length) { grid.innerHTML = ""; empty.style.display = "block"; return; }
-    empty.style.display = "none";
-
-    grid.innerHTML = photos.map((p, idx) => {
-        const reactions = p.reactions || {};
-        const mySet     = getMyReactions("photo", p.id);
-        const reactionPills = Object.entries(reactions)
-            .filter(([,cnt]) => cnt > 0)
-            .map(([emoji, cnt]) => `
+            grid.innerHTML = photos.map((p, idx) => {
+                const reactions = p.reactions || {};
+                const mySet = getMyReactions("photo", p.id);
+                const reactionPills = Object.entries(reactions)
+                    .filter(([, cnt]) => cnt > 0)
+                    .map(([emoji, cnt]) => `
                 <button class="reaction-pill ${mySet.has(emoji) ? "mine" : ""}"
                     onclick="event.stopPropagation();togglePhotoReaction(${p.id},'${emoji}',${idx})"
                     title="${emoji}">
                     ${emoji}<span class="r-count">${cnt}</span>
                 </button>`).join("");
 
-        if (currentView === "list") {
-            // Card horizontal
-            return `
+                if (currentView === "list") {
+                    // Card horizontal
+                    return `
             <div class="photo-card" onclick="openLightbox(${idx})">
                 <img src="${p.src}" alt="recuerdo" />
                 <div class="photo-card-info">
                     <div class="photo-date-text">📅 ${p.date}</div>
                     <div class="photo-reactions-row">
-                        ${Object.entries(reactions).filter(([,c])=>c>0).map(([emoji,cnt])=>`
-                            <button class="note-reaction-btn ${mySet.has(emoji)?'mine':''}"
+                        ${Object.entries(reactions).filter(([, c]) => c > 0).map(([emoji, cnt]) => `
+                            <button class="note-reaction-btn ${mySet.has(emoji) ? 'mine' : ''}"
                                 onclick="event.stopPropagation();togglePhotoReaction(${p.id},'${emoji}',${idx})"
                                 style="font-size:12px;padding:3px 10px;">
                                 ${emoji}<span class="r-count">${cnt}</span>
@@ -607,10 +1498,10 @@ function renderPhotos(photos) {
                         onclick="event.stopPropagation();deletePhoto(${p.id})">🗑️ Eliminar</button>
                 </div>
             </div>`;
-        }
+                }
 
-        // Grid / Grande
-        return `
+                // Grid / Grande
+                return `
         <div class="photo-card" onclick="openLightbox(${idx})">
             <img src="${p.src}" alt="recuerdo" />
             <button class="photo-del" onclick="event.stopPropagation();deletePhoto(${p.id})">✕</button>
@@ -618,143 +1509,143 @@ function renderPhotos(photos) {
             <div class="photo-date">${p.date}</div>
             <div class="photo-reactions">${reactionPills}</div>
         </div>`;
-    }).join("");
-}
+            }).join("");
+        }
 
-async function togglePhotoReaction(photoId, emoji, idx) {
-    const photo    = allPhotos.find(p => p.id === photoId);
-    if (!photo) return;
-    const reactions = { ...(photo.reactions || {}) };
-    const mySet     = getMyReactions("photo", photoId);
-    const alreadyMine = mySet.has(emoji);
+        async function togglePhotoReaction(photoId, emoji, idx) {
+            const photo = allPhotos.find(p => p.id === photoId);
+            if (!photo) return;
+            const reactions = { ...(photo.reactions || {}) };
+            const mySet = getMyReactions("photo", photoId);
+            const alreadyMine = mySet.has(emoji);
 
-    if (alreadyMine) {
-        reactions[emoji] = Math.max(0, (reactions[emoji] || 1) - 1);
-        setMyReaction("photo", photoId, emoji, false);
-    } else {
-        reactions[emoji] = (reactions[emoji] || 0) + 1;
-        setMyReaction("photo", photoId, emoji, true);
-    }
+            if (alreadyMine) {
+                reactions[emoji] = Math.max(0, (reactions[emoji] || 1) - 1);
+                setMyReaction("photo", photoId, emoji, false);
+            } else {
+                reactions[emoji] = (reactions[emoji] || 0) + 1;
+                setMyReaction("photo", photoId, emoji, true);
+            }
 
-    photo.reactions = reactions;
-    await db.from("photos").update({ reactions }).eq("id", photoId);
-    renderPhotos(allPhotos);
-    // Si el lightbox está abierto con esta foto, actualizar
-    if (document.getElementById("lightbox").classList.contains("open") && lbIndex === idx) {
-        renderLightboxReactions(photoId);
-    }
-}
+            photo.reactions = reactions;
+            await db.from("photos").update({ reactions }).eq("id", photoId);
+            renderPhotos(allPhotos);
+            // Si el lightbox está abierto con esta foto, actualizar
+            if (document.getElementById("lightbox").classList.contains("open") && lbIndex === idx) {
+                renderLightboxReactions(photoId);
+            }
+        }
 
-// ── LIGHTBOX ──────────────────────────────────────────────────
-function openLightbox(idx) {
-    lbIndex = idx;
-    showLightboxPhoto();
-    document.getElementById("lightbox").classList.add("open");
-}
-function closeLightbox() {
-    document.getElementById("lightbox").classList.remove("open");
-}
-function lightboxNav(dir) {
-    lbIndex = Math.max(0, Math.min(allPhotos.length - 1, lbIndex + dir));
-    showLightboxPhoto();
-}
-function showLightboxPhoto() {
-    const p = allPhotos[lbIndex];
-    if (!p) return;
-    const img = document.getElementById("lightbox-img");
-    img.style.opacity = "0";
-    setTimeout(() => { img.src = p.src; img.style.opacity = "1"; }, 100);
-    document.getElementById("lightbox-date").textContent = "📅 " + p.date;
-    document.getElementById("lb-prev").disabled = lbIndex === 0;
-    document.getElementById("lb-next").disabled = lbIndex === allPhotos.length - 1;
-    renderLightboxReactions(p.id);
-}
-function renderLightboxReactions(photoId) {
-    const photo     = allPhotos.find(p => p.id === photoId);
-    if (!photo) return;
-    const reactions = photo.reactions || {};
-    const mySet     = getMyReactions("photo", photoId);
-    const idx       = allPhotos.indexOf(photo);
-    const ALL_EMOJIS = ["❤️","😍","🥰","😂","😮","🔥","✨","💫","🌊","💙"];
+        // ── LIGHTBOX ──────────────────────────────────────────────────
+        function openLightbox(idx) {
+            lbIndex = idx;
+            showLightboxPhoto();
+            document.getElementById("lightbox").classList.add("open");
+        }
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("open");
+        }
+        function lightboxNav(dir) {
+            lbIndex = Math.max(0, Math.min(allPhotos.length - 1, lbIndex + dir));
+            showLightboxPhoto();
+        }
+        function showLightboxPhoto() {
+            const p = allPhotos[lbIndex];
+            if (!p) return;
+            const img = document.getElementById("lightbox-img");
+            img.style.opacity = "0";
+            setTimeout(() => { img.src = p.src; img.style.opacity = "1"; }, 100);
+            document.getElementById("lightbox-date").textContent = "📅 " + p.date;
+            document.getElementById("lb-prev").disabled = lbIndex === 0;
+            document.getElementById("lb-next").disabled = lbIndex === allPhotos.length - 1;
+            renderLightboxReactions(p.id);
+        }
+        function renderLightboxReactions(photoId) {
+            const photo = allPhotos.find(p => p.id === photoId);
+            if (!photo) return;
+            const reactions = photo.reactions || {};
+            const mySet = getMyReactions("photo", photoId);
+            const idx = allPhotos.indexOf(photo);
+            const ALL_EMOJIS = ["❤️", "😍", "🥰", "😂", "😮", "🔥", "✨", "💫", "🌊", "💙"];
 
-    document.getElementById("lightbox-reactions").innerHTML = ALL_EMOJIS.map(emoji => {
-        const cnt = reactions[emoji] || 0;
-        const mine = mySet.has(emoji);
-        return `<button class="lb-reaction ${mine?"mine":""}"
+            document.getElementById("lightbox-reactions").innerHTML = ALL_EMOJIS.map(emoji => {
+                const cnt = reactions[emoji] || 0;
+                const mine = mySet.has(emoji);
+                return `<button class="lb-reaction ${mine ? "mine" : ""}"
             onclick="togglePhotoReaction(${photoId},'${emoji}',${idx})">
             ${emoji}<span class="r-count">${cnt > 0 ? cnt : ""}</span>
         </button>`;
-    }).join("");
-}
-// Cerrar lightbox al hacer click fuera de la imagen
-document.getElementById("lightbox").addEventListener("click", function(e) {
-    if (e.target === this) closeLightbox();
-});
-// Navegación con teclado
-document.addEventListener("keydown", e => {
-    if (!document.getElementById("lightbox").classList.contains("open")) return;
-    if (e.key === "ArrowLeft")  lightboxNav(-1);
-    if (e.key === "ArrowRight") lightboxNav(1);
-    if (e.key === "Escape")     closeLightbox();
-});
+            }).join("");
+        }
+        // Cerrar lightbox al hacer click fuera de la imagen
+        document.getElementById("lightbox").addEventListener("click", function (e) {
+            if (e.target === this) closeLightbox();
+        });
+        // Navegación con teclado
+        document.addEventListener("keydown", e => {
+            if (!document.getElementById("lightbox").classList.contains("open")) return;
+            if (e.key === "ArrowLeft") lightboxNav(-1);
+            if (e.key === "ArrowRight") lightboxNav(1);
+            if (e.key === "Escape") closeLightbox();
+        });
 
-// ── NOTAS ─────────────────────────────────────────────────────
-async function saveNote() {
-    const title = document.getElementById("note-title").value.trim();
-    const body  = document.getElementById("note-body").value.trim();
-    if (!title && !body) { showToast("✏️ Escribe algo primero"); return; }
-    const btn  = document.getElementById("save-note-btn");
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span>Guardando...';
-    const date = new Date().toLocaleDateString("es-CO", { day:"numeric", month:"long", year:"numeric" });
-    const { error } = await db.from("notes").insert({ title: title || "Sin título", body, mood, date, reactions: {} });
-    btn.disabled  = false;
-    btn.innerHTML = "Guardar recuerdo 💾";
-    if (error) { showToast("❌ Error al guardar"); return; }
-    document.getElementById("note-title").value = "";
-    document.getElementById("note-body").value  = "";
-    mood = "";
-    document.querySelectorAll(".mood-chip").forEach(b => b.classList.remove("on"));
-    showToast("💙 Recuerdo guardado para los dos");
-    await loadNotes();
-}
+        // ── NOTAS ─────────────────────────────────────────────────────
+        async function saveNote() {
+            const title = document.getElementById("note-title").value.trim();
+            const body = document.getElementById("note-body").value.trim();
+            if (!title && !body) { showToast("✏️ Escribe algo primero"); return; }
+            const btn = document.getElementById("save-note-btn");
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>Guardando...';
+            const date = new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
+            const { error } = await db.from("notes").insert({ title: title || "Sin título", body, mood, date, reactions: {} });
+            btn.disabled = false;
+            btn.innerHTML = "Guardar recuerdo 💾";
+            if (error) { showToast("❌ Error al guardar"); return; }
+            document.getElementById("note-title").value = "";
+            document.getElementById("note-body").value = "";
+            mood = "";
+            document.querySelectorAll(".mood-chip").forEach(b => b.classList.remove("on"));
+            showToast("💙 Recuerdo guardado para los dos");
+            await loadNotes();
+        }
 
-async function deleteNote(id) {
-    const ok = await showConfirm("¿Eliminar este recuerdo?", "Esta nota desaparecerá para los dos y no se puede recuperar.");
-    if (!ok) return;
-    const { error } = await db.from("notes").delete().eq("id", id);
-    if (error) { showToast("❌ Error al eliminar"); return; }
-    showToast("🗑️ Nota eliminada");
-    await loadNotes();
-}
+        async function deleteNote(id) {
+            const ok = await showConfirm("¿Eliminar este recuerdo?", "Esta nota desaparecerá para los dos y no se puede recuperar.");
+            if (!ok) return;
+            const { error } = await db.from("notes").delete().eq("id", id);
+            if (error) { showToast("❌ Error al eliminar"); return; }
+            showToast("🗑️ Nota eliminada");
+            await loadNotes();
+        }
 
-async function loadNotes() {
-    const { data, error } = await db.from("notes").select("*").order("created_at", { ascending: false });
-    if (error) { console.error(error); return; }
-    renderNotes(data || []);
-}
+        async function loadNotes() {
+            const { data, error } = await db.from("notes").select("*").order("created_at", { ascending: false });
+            if (error) { console.error(error); return; }
+            renderNotes(data || []);
+        }
 
-let allNotes = [];
-function renderNotes(notes) {
-    allNotes = notes;
-    const list  = document.getElementById("notes-list");
-    const empty = document.getElementById("notes-empty");
-    if (!notes.length) { list.innerHTML = ""; empty.style.display = "block"; return; }
-    empty.style.display = "none";
-    list.innerHTML = notes.map(n => {
-        const reactions = n.reactions || {};
-        const mySet     = getMyReactions("note", n.id);
-        const reactionBtns = Object.entries(reactions)
-            .filter(([,cnt]) => cnt > 0)
-            .map(([emoji, cnt]) => {
-                const safeEmoji = emoji.replace(/'/g, "\\'");
-                return `<button class="note-reaction-btn ${mySet.has(emoji) ? "mine" : ""}"
+        let allNotes = [];
+        function renderNotes(notes) {
+            allNotes = notes;
+            const list = document.getElementById("notes-list");
+            const empty = document.getElementById("notes-empty");
+            if (!notes.length) { list.innerHTML = ""; empty.style.display = "block"; return; }
+            empty.style.display = "none";
+            list.innerHTML = notes.map(n => {
+                const reactions = n.reactions || {};
+                const mySet = getMyReactions("note", n.id);
+                const reactionBtns = Object.entries(reactions)
+                    .filter(([, cnt]) => cnt > 0)
+                    .map(([emoji, cnt]) => {
+                        const safeEmoji = emoji.replace(/'/g, "\\'");
+                        return `<button class="note-reaction-btn ${mySet.has(emoji) ? "mine" : ""}"
                     onclick="toggleNoteReaction(${n.id},'${safeEmoji}')">
                     ${emoji}<span class="r-count">${cnt}</span>
                 </button>`;
-            }).join("");
+                    }).join("");
 
-        return `
+                return `
         <div class="note-card" id="ncard-${n.id}">
             <button class="note-del-btn" onclick="deleteNote(${n.id})">✕</button>
             <div class="note-card-title">${n.title}</div>
@@ -769,28 +1660,29 @@ function renderNotes(notes) {
                 </button>
             </div>
         </div>`;
-    }).join("");
-}
+            }).join("");
+        }
 
-async function toggleNoteReaction(noteId, emoji) {
-    const note      = allNotes.find(n => n.id === noteId);
-    if (!note) return;
-    const reactions = { ...(note.reactions || {}) };
-    const mySet     = getMyReactions("note", noteId);
-    const alreadyMine = mySet.has(emoji);
+        async function toggleNoteReaction(noteId, emoji) {
+            const note = allNotes.find(n => n.id === noteId);
+            if (!note) return;
+            const reactions = { ...(note.reactions || {}) };
+            const mySet = getMyReactions("note", noteId);
+            const alreadyMine = mySet.has(emoji);
 
-    if (alreadyMine) {
-        reactions[emoji] = Math.max(0, (reactions[emoji] || 1) - 1);
-        setMyReaction("note", noteId, emoji, false);
-    } else {
-        reactions[emoji] = (reactions[emoji] || 0) + 1;
-        setMyReaction("note", noteId, emoji, true);
-    }
+            if (alreadyMine) {
+                reactions[emoji] = Math.max(0, (reactions[emoji] || 1) - 1);
+                setMyReaction("note", noteId, emoji, false);
+            } else {
+                reactions[emoji] = (reactions[emoji] || 0) + 1;
+                setMyReaction("note", noteId, emoji, true);
+            }
 
-    note.reactions = reactions;
-    await db.from("notes").update({ reactions }).eq("id", noteId);
-    renderNotes(allNotes);
-}
-</script>
+            note.reactions = reactions;
+            await db.from("notes").update({ reactions }).eq("id", noteId);
+            renderNotes(allNotes);
+        }
+    </script>
 </body>
+
 </html>
