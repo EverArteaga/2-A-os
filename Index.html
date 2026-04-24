@@ -392,21 +392,38 @@ function setMyReaction(type, id, emoji, active) {
 
 // ── EMOJI PICKER ──────────────────────────────────────────────
 let pickerCallback = null;
+const _pickerTarget = { type: null, id: null, idx: null };
 
-function openEmojiPicker(anchorEl, callback) {
-    pickerCallback = callback;
+function openEmojiPickerForNote(anchorEl, noteId) {
+    _pickerTarget.type = "note";
+    _pickerTarget.id   = noteId;
+    pickerCallback = null;
+    _openEmojiPickerAt(anchorEl);
+}
+function openEmojiPickerForPhoto(anchorEl, photoId, idx) {
+    _pickerTarget.type = "photo";
+    _pickerTarget.id   = photoId;
+    _pickerTarget.idx  = idx;
+    pickerCallback = null;
+    _openEmojiPickerAt(anchorEl);
+}
+function _openEmojiPickerAt(anchorEl) {
     const picker  = document.getElementById("emoji-picker");
     const overlay = document.getElementById("emoji-overlay");
     const rect    = anchorEl.getBoundingClientRect();
     picker.style.display = "flex";
     overlay.classList.add("open");
-    // Posición inteligente
     let top  = rect.bottom + 8;
     let left = rect.left;
     if (top + 180 > window.innerHeight) top = rect.top - 180;
     if (left + 220 > window.innerWidth) left = window.innerWidth - 228;
     picker.style.top  = top  + "px";
     picker.style.left = left + "px";
+}
+function openEmojiPicker(anchorEl, callback) {
+    pickerCallback = callback;
+    _pickerTarget.type = null;
+    _openEmojiPickerAt(anchorEl);
 }
 function closeEmojiPicker() {
     document.getElementById("emoji-picker").style.display = "none";
@@ -415,7 +432,15 @@ function closeEmojiPicker() {
 }
 function selectEmoji(emoji) {
     closeEmojiPicker();
-    if (pickerCallback) pickerCallback(emoji);
+    if (_pickerTarget.type === "note") {
+        toggleNoteReaction(_pickerTarget.id, emoji);
+        _pickerTarget.type = null;
+    } else if (_pickerTarget.type === "photo") {
+        togglePhotoReaction(_pickerTarget.id, emoji, _pickerTarget.idx);
+        _pickerTarget.type = null;
+    } else if (pickerCallback) {
+        pickerCallback(emoji);
+    }
 }
 
 // ── CONFIRM MODAL ─────────────────────────────────────────────
@@ -721,11 +746,13 @@ function renderNotes(notes) {
         const mySet     = getMyReactions("note", n.id);
         const reactionBtns = Object.entries(reactions)
             .filter(([,cnt]) => cnt > 0)
-            .map(([emoji, cnt]) => `
-                <button class="note-reaction-btn ${mySet.has(emoji) ? "mine" : ""}"
-                    onclick="toggleNoteReaction(${n.id},'${emoji}')">
+            .map(([emoji, cnt]) => {
+                const safeEmoji = emoji.replace(/'/g, "\\'");
+                return `<button class="note-reaction-btn ${mySet.has(emoji) ? "mine" : ""}"
+                    onclick="toggleNoteReaction(${n.id},'${safeEmoji}')">
                     ${emoji}<span class="r-count">${cnt}</span>
-                </button>`).join("");
+                </button>`;
+            }).join("");
 
         return `
         <div class="note-card" id="ncard-${n.id}">
@@ -737,7 +764,7 @@ function renderNotes(notes) {
             <div class="note-reactions">
                 ${reactionBtns}
                 <button class="note-add-reaction"
-                    onclick="openEmojiPicker(this, em => toggleNoteReaction(${n.id}, em))">
+                    onclick="openEmojiPickerForNote(this, ${n.id})">
                     + 😊
                 </button>
             </div>
