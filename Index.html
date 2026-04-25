@@ -1250,7 +1250,12 @@
     <script>
         const SUPABASE_URL = "https://qxlfuexvnsopzajwycnz.supabase.co";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4bGZ1ZXh2bnNvcHphand5Y256Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NjU2ODUsImV4cCI6MjA5MjA0MTY4NX0.3UpiBM7dbylmsIQV-O0I8Fs-akXHzvyVVC5w8P7EhlA";
-        const PASSWORD = "18042024";
+        // Contraseña almacenada como hash SHA-256 (no en texto plano)
+        const PASSWORD_HASH = "f49e6060d36af5f6f957457af9fc8d9af7cafd71511508d05942e622ba4961d2"; // sha256("18042024")
+        async function hashPassword(pwd) {
+            const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(pwd));
+            return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("");
+        }
 
         const { createClient } = supabase;
         const db = createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -1309,6 +1314,8 @@
         function openEmojiPicker(anchorEl, callback) {
             pickerCallback = callback;
             _pickerTarget.type = null;
+            _pickerTarget.id = null;
+            _pickerTarget.idx = null;
             _openEmojiPickerAt(anchorEl);
         }
         function closeEmojiPicker() {
@@ -1338,12 +1345,18 @@
             document.getElementById("confirm-overlay").classList.add("open");
             return new Promise(resolve => {
                 confirmResolve = resolve;
-                document.getElementById("confirm-ok").onclick = () => { closeConfirm(); resolve(true); };
+                document.getElementById("confirm-ok").onclick = () => {
+                    closeConfirm(true);
+                };
             });
         }
-        function closeConfirm() {
+        function closeConfirm(result = false) {
             document.getElementById("confirm-overlay").classList.remove("open");
-            if (confirmResolve) { confirmResolve(false); confirmResolve = null; }
+            if (confirmResolve) {
+                const fn = confirmResolve;
+                confirmResolve = null;
+                fn(result);
+            }
         }
 
         // ── TOAST ─────────────────────────────────────────────────────
@@ -1355,9 +1368,10 @@
         }
 
         // ── AUTH ──────────────────────────────────────────────────────
-        function checkPass() {
+        async function checkPass() {
             const v = document.getElementById("pass-input").value;
-            if (v === PASSWORD) {
+            const hash = await hashPassword(v);
+            if (hash === PASSWORD_HASH) {
                 document.getElementById("lock-screen").style.display = "none";
                 const app = document.getElementById("app");
                 app.style.display = "flex";
@@ -1410,6 +1424,7 @@
         // ── FOTOS ─────────────────────────────────────────────────────
         function addPhoto(event) {
             const file = event.target.files[0];
+            event.target.value = ""; // Resetear inmediatamente para permitir subir el mismo archivo de nuevo
             if (!file) return;
             const canvas = document.createElement("canvas");
             const img = new Image();
@@ -1437,7 +1452,6 @@
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
-            event.target.value = "";
         }
 
         async function deletePhoto(id) {
@@ -1490,7 +1504,7 @@
                                 ${emoji}<span class="r-count">${cnt}</span>
                             </button>`).join("")}
                         <button class="note-add-reaction" style="font-size:12px;padding:3px 8px;"
-                            onclick="event.stopPropagation();openEmojiPicker(this, em=>togglePhotoReaction(${p.id},em,${idx}))">
+                            onclick="event.stopPropagation();openEmojiPickerForPhoto(this,${p.id},${idx})">
                             + 😊
                         </button>
                     </div>
