@@ -1111,6 +1111,406 @@
         .toast.show {
             opacity: 1;
         }
+
+        /* ── FONDO PERSONALIZADO ── */
+        #app.has-bg {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        #app.has-bg .tab-content {
+            background: rgba(253, 248, 245, 0.88);
+            backdrop-filter: blur(6px);
+        }
+        #app.has-bg .app-header {
+            background: linear-gradient(135deg, rgba(212,83,126,0.85), rgba(55,138,221,0.85) 50%, rgba(99,153,34,0.85));
+            backdrop-filter: blur(8px);
+        }
+        #app.has-bg .tabs {
+            background: rgba(255,255,255,0.82);
+            backdrop-filter: blur(8px);
+        }
+        #lock-screen.has-bg {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        #lock-screen.has-bg .lock-box {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+        }
+
+        /* ── BOTÓN SETTINGS ── */
+        .settings-btn {
+            background: rgba(255,255,255,0.2);
+            border: 1.5px solid rgba(255,255,255,0.5);
+            color: white;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            margin-right: 8px;
+        }
+        .settings-btn:hover { background: rgba(255,255,255,0.35); }
+
+        /* ── MODAL SETTINGS ── */
+        .settings-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .settings-overlay.open { display: flex; }
+        .settings-box {
+            background: white;
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+        }
+        .settings-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--pink);
+            margin-bottom: 20px;
+        }
+        .settings-section {
+            margin-bottom: 20px;
+        }
+        .settings-label {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .settings-bg-preview {
+            width: 100%;
+            height: 80px;
+            border-radius: var(--radius-sm);
+            border: 2px dashed var(--pink-mid);
+            background: var(--pink-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--pink);
+            font-weight: 500;
+            transition: all 0.2s;
+            overflow: hidden;
+            position: relative;
+        }
+        .settings-bg-preview:hover { border-color: var(--pink); background: #F4C0D1; }
+        .settings-bg-preview img {
+            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+        }
+        .settings-bg-preview .overlay-label {
+            position: relative; z-index: 1;
+            background: rgba(255,255,255,0.75);
+            padding: 4px 12px; border-radius: 20px; font-size: 12px;
+        }
+        .settings-remove-bg {
+            margin-top: 8px;
+            width: 100%;
+            padding: 9px;
+            border: 1.5px solid #E0D5CC;
+            border-radius: var(--radius-sm);
+            background: white;
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            color: #E24B4A;
+            transition: all 0.15s;
+        }
+        .settings-remove-bg:hover { background: #FFF0F0; }
+        .settings-close {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--pink), #C0395F);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            margin-top: 4px;
+        }
+
+        /* ── CARTAS DE AMOR ── */
+        .tab-letters { }
+        .letter-form-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+            border-top: 4px solid var(--pink);
+        }
+        .letter-input, .letter-textarea {
+            width: 100%;
+            border: 1.5px solid #F4C0D1;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: white;
+            transition: border-color 0.2s;
+            outline: none;
+            margin-bottom: 14px;
+        }
+        .letter-input:focus, .letter-textarea:focus { border-color: var(--pink); }
+        .letter-textarea { min-height: 100px; resize: vertical; }
+        .letter-date-input {
+            width: 100%;
+            border: 1.5px solid #F4C0D1;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            background: white;
+            outline: none;
+            margin-bottom: 14px;
+            cursor: pointer;
+        }
+        .letter-date-input:focus { border-color: var(--pink); }
+
+        /* Cards de cartas */
+        .letter-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 18px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--pink);
+            position: relative;
+            transition: transform 0.15s;
+        }
+        .letter-card:hover { transform: translateX(3px); }
+        .letter-card.locked {
+            border-left-color: #B5D4F4;
+            opacity: 0.85;
+        }
+        .letter-card-title {
+            font-size: 15px;
+            font-weight: 500;
+            color: #C0395F;
+            margin-bottom: 4px;
+            padding-right: 30px;
+        }
+        .letter-card.locked .letter-card-title { color: var(--text-muted); }
+        .letter-card-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+        .letter-card-body {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+        .letter-lock-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            background: var(--blue-light);
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-top: 6px;
+        }
+        .letter-del-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #F4C0D1;
+            font-size: 18px;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+        .letter-del-btn:hover { color: #E24B4A; }
+
+        /* Modal carta desbloqueada */
+        .letter-open-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(6px);
+        }
+        .letter-open-overlay.open { display: flex; }
+        .letter-open-box {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            max-width: 380px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 16px 60px rgba(212,83,126,0.3);
+            animation: letterPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        @keyframes letterPop {
+            from { transform: scale(0.7); opacity: 0; }
+            to   { transform: scale(1);   opacity: 1; }
+        }
+        .letter-open-icon { font-size: 52px; margin-bottom: 12px; }
+        .letter-open-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--pink);
+            margin-bottom: 6px;
+        }
+        .letter-open-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+        .letter-open-body {
+            font-size: 14px;
+            color: var(--text);
+            line-height: 1.7;
+            text-align: left;
+            background: var(--pink-light);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 20px;
+            white-space: pre-wrap;
+        }
+        .letter-open-close {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, var(--pink), #C0395F);
+            color: white;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+        }
+
+        /* ── NOTA DE VOZ ── */
+        .voice-recorder {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding: 12px 14px;
+            border: 1.5px solid #F4C0D1;
+            border-radius: var(--radius-sm);
+            background: var(--pink-light);
+        }
+        .voice-rec-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: var(--pink);
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .voice-rec-btn.recording {
+            background: #E24B4A;
+            animation: recPulse 1s ease-in-out infinite;
+        }
+        @keyframes recPulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(226,75,74,0.4); }
+            50%      { box-shadow: 0 0 0 8px rgba(226,75,74,0); }
+        }
+        .voice-rec-info {
+            flex: 1;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .voice-rec-timer {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--pink);
+            font-variant-numeric: tabular-nums;
+        }
+        .voice-rec-clear {
+            background: none;
+            border: none;
+            color: #E24B4A;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* Mini reproductor en note card */
+        .note-audio-player {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: var(--blue-light);
+            border-radius: var(--radius-sm);
+        }
+        .audio-play-btn {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: var(--blue);
+            color: white;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.2s;
+        }
+        .audio-play-btn:hover { background: #185FA5; }
+        .audio-progress-wrap {
+            flex: 1;
+            height: 4px;
+            background: #B5D4F4;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+        .audio-progress-bar {
+            height: 100%;
+            background: var(--blue);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        .audio-duration {
+            font-size: 11px;
+            color: var(--blue);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
     </style>
 </head>
 
@@ -1179,6 +1579,36 @@
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
+    <!-- SETTINGS MODAL -->
+    <div class="settings-overlay" id="settings-overlay">
+        <div class="settings-box">
+            <div class="settings-title">⚙️ Ajustes</div>
+            <div class="settings-section">
+                <span class="settings-label">Fondo personalizado</span>
+                <div class="settings-bg-preview" id="bg-preview" onclick="document.getElementById('bg-file-input').click()">
+                    <span class="overlay-label">🖼️ Toca para elegir una foto</span>
+                </div>
+                <input type="file" id="bg-file-input" accept="image/*" style="display:none" onchange="applyBackground(event)" />
+                <button class="settings-remove-bg" onclick="removeBackground()">🗑️ Quitar fondo</button>
+            </div>
+            <button class="settings-close" onclick="closeSettings()">Listo ✓</button>
+        </div>
+    </div>
+
+    <!-- MODAL CARTA DESBLOQUEADA -->
+    <div class="letter-open-overlay" id="letter-open-overlay">
+        <div class="letter-open-box">
+            <div class="letter-open-icon">💌</div>
+            <div class="letter-open-title" id="lo-title">Una carta para ti</div>
+            <div class="letter-open-date" id="lo-date"></div>
+            <div class="letter-open-body" id="lo-body"></div>
+            <button class="letter-open-close" onclick="closeLetterModal()">Guardar en el corazón 💖</button>
+        </div>
+    </div>
+
+    <!-- CANVAS CONFETTI -->
+    <canvas id="confetti-canvas" style="position:fixed;inset:0;pointer-events:none;z-index:9998;display:none;"></canvas>
+
     <!-- APP -->
     <div id="app">
         <div class="app-header">
@@ -1186,12 +1616,16 @@
                 <div class="header-title">💖 Nuestros <em>Recuerdos</em></div>
                 <div class="header-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
             </div>
-            <button class="logout-btn" onclick="logout()">Salir</button>
+            <div style="display:flex;align-items:center;gap:0;">
+                <button class="settings-btn" onclick="openSettings()" title="Ajustes">⚙️</button>
+                <button class="logout-btn" onclick="logout()">Salir</button>
+            </div>
         </div>
 
         <div class="tabs">
             <div class="tab active" onclick="switchTab('fotos',this)">📸 Fotos</div>
             <div class="tab" onclick="switchTab('notas',this)">📝 Notas</div>
+            <div class="tab" onclick="switchTab('cartas',this)">💌 Cartas</div>
         </div>
 
         <!-- TAB FOTOS -->
@@ -1237,12 +1671,44 @@
                 <label class="form-label">Cuéntalo</label>
                 <textarea class="note-textarea" id="note-body"
                     placeholder="Escribe lo que vivieron juntos..."></textarea>
+
+                <!-- NOTA DE VOZ -->
+                <label class="form-label">Nota de voz (opcional)</label>
+                <div class="voice-recorder" id="voice-recorder">
+                    <button class="voice-rec-btn" id="voice-rec-btn" onclick="toggleRecording()" title="Grabar">🎙️</button>
+                    <div class="voice-rec-info">
+                        <div id="voice-rec-label">Toca para grabar un mensaje de voz</div>
+                        <div class="voice-rec-timer" id="voice-rec-timer" style="display:none;">0:00</div>
+                    </div>
+                    <button class="voice-rec-clear" id="voice-rec-clear" style="display:none;" onclick="clearRecording()" title="Borrar">✕</button>
+                </div>
+
                 <button class="save-btn" id="save-note-btn" onclick="saveNote()">Guardar recuerdo 💾</button>
             </div>
             <div id="notes-list"></div>
             <div id="notes-empty" class="empty-state">
                 <div class="big">✍️</div>
                 Escribe su primer recuerdo juntos
+            </div>
+        </div>
+
+        <!-- TAB CARTAS -->
+        <div id="tab-cartas" class="tab-content tab-letters">
+            <div class="letter-form-card">
+                <label class="form-label">Para quién es la carta</label>
+                <input class="letter-input" id="letter-title" placeholder="Ej: Para ti, el día de nuestro aniversario..." />
+                <label class="form-label">Escribe tu carta de amor</label>
+                <textarea class="letter-textarea" id="letter-body" placeholder="Escribe todo lo que sientes... se guardará bajo llave hasta la fecha que elijas 🔒"></textarea>
+                <label class="form-label">¿Cuándo se podrá abrir? 📅</label>
+                <input class="letter-date-input" type="date" id="letter-date" />
+                <button class="save-btn" id="save-letter-btn" onclick="saveLetter()" style="background:linear-gradient(135deg,var(--pink),#C0395F);box-shadow:0 4px 14px rgba(212,83,126,0.35);">
+                    Guardar carta 💌
+                </button>
+            </div>
+            <div id="letters-list"></div>
+            <div id="letters-empty" class="empty-state">
+                <div class="big">💌</div>
+                Escribe tu primera carta de amor programada
             </div>
         </div>
     </div>
@@ -1665,6 +2131,14 @@
             <div class="note-card-title">${n.title}</div>
             ${n.mood ? `<div class="note-card-mood">${n.mood}</div>` : ""}
             ${n.body ? `<div class="note-card-body">${n.body}</div>` : ""}
+            ${n.audio_base64 ? `
+            <div class="note-audio-player" id="aplayer-${n.id}">
+                <button class="audio-play-btn" onclick="toggleAudio(${n.id},'${n.audio_base64.substring(0,20)}')">▶</button>
+                <div class="audio-progress-wrap" onclick="seekAudio(event,${n.id})">
+                    <div class="audio-progress-bar" id="aprog-${n.id}"></div>
+                </div>
+                <span class="audio-duration" id="adur-${n.id}">${formatDur(n.audio_duration||0)}</span>
+            </div>` : ""}
             <div class="note-card-date">${n.date}</div>
             <div class="note-reactions">
                 ${reactionBtns}
@@ -1696,6 +2170,384 @@
             await db.from("notes").update({ reactions }).eq("id", noteId);
             renderNotes(allNotes);
         }
+
+        // ══════════════════════════════════════════════════════════════
+        // ── FONDO PERSONALIZADO ───────────────────────────────────────
+        // ══════════════════════════════════════════════════════════════
+        function openSettings() {
+            // Mostrar preview si ya hay fondo guardado
+            const saved = localStorage.getItem("custom_bg");
+            const preview = document.getElementById("bg-preview");
+            if (saved) {
+                preview.innerHTML = `<img src="${saved}"><span class="overlay-label">🖼️ Cambiar foto</span>`;
+            } else {
+                preview.innerHTML = `<span class="overlay-label">🖼️ Toca para elegir una foto</span>`;
+            }
+            document.getElementById("settings-overlay").classList.add("open");
+        }
+        function closeSettings() {
+            document.getElementById("settings-overlay").classList.remove("open");
+        }
+        function applyBackground(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = e => {
+                const dataUrl = e.target.result;
+                localStorage.setItem("custom_bg", dataUrl);
+                _setBgOnElements(dataUrl);
+                document.getElementById("bg-preview").innerHTML =
+                    `<img src="${dataUrl}"><span class="overlay-label">🖼️ Cambiar foto</span>`;
+                showToast("🖼️ Fondo aplicado");
+            };
+            reader.readAsDataURL(file);
+            event.target.value = "";
+        }
+        function removeBackground() {
+            localStorage.removeItem("custom_bg");
+            _setBgOnElements(null);
+            document.getElementById("bg-preview").innerHTML =
+                `<span class="overlay-label">🖼️ Toca para elegir una foto</span>`;
+            showToast("🗑️ Fondo eliminado");
+        }
+        function _setBgOnElements(dataUrl) {
+            const app = document.getElementById("app");
+            const lock = document.getElementById("lock-screen");
+            if (dataUrl) {
+                app.style.backgroundImage = `url(${dataUrl})`;
+                lock.style.backgroundImage = `url(${dataUrl})`;
+                app.classList.add("has-bg");
+                lock.classList.add("has-bg");
+            } else {
+                app.style.backgroundImage = "";
+                lock.style.backgroundImage = "";
+                app.classList.remove("has-bg");
+                lock.classList.remove("has-bg");
+            }
+        }
+        // Aplicar fondo guardado al cargar
+        (function initBackground() {
+            const saved = localStorage.getItem("custom_bg");
+            if (saved) _setBgOnElements(saved);
+        })();
+
+        // ══════════════════════════════════════════════════════════════
+        // ── CARTAS DE AMOR PROGRAMADAS ────────────────────────────────
+        // ══════════════════════════════════════════════════════════════
+        async function saveLetter() {
+            const title = document.getElementById("letter-title").value.trim();
+            const body  = document.getElementById("letter-body").value.trim();
+            const dateVal = document.getElementById("letter-date").value;
+            if (!title || !body) { showToast("✏️ Escribe el título y la carta"); return; }
+            if (!dateVal) { showToast("📅 Elige una fecha de apertura"); return; }
+            const today = new Date().toISOString().split("T")[0];
+            if (dateVal <= today) { showToast("📅 Elige una fecha futura"); return; }
+
+            const btn = document.getElementById("save-letter-btn");
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>Guardando...';
+
+            const { error } = await db.from("letters").insert({
+                title,
+                body,
+                unlock_date: dateVal,
+                opened: false
+            });
+
+            btn.disabled = false;
+            btn.innerHTML = "Guardar carta 💌";
+            if (error) { showToast("❌ Error al guardar: " + error.message); return; }
+
+            document.getElementById("letter-title").value = "";
+            document.getElementById("letter-body").value = "";
+            document.getElementById("letter-date").value = "";
+            showToast("💌 Carta guardada, se abrirá el " + new Date(dateVal + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"}));
+            await loadLetters();
+        }
+
+        async function deleteLetter(id) {
+            const ok = await showConfirm("¿Eliminar esta carta?", "La carta desaparecerá para los dos.");
+            if (!ok) return;
+            await db.from("letters").delete().eq("id", id);
+            showToast("🗑️ Carta eliminada");
+            await loadLetters();
+        }
+
+        async function loadLetters() {
+            const { data, error } = await db.from("letters").select("*").order("unlock_date", { ascending: true });
+            if (error) { console.error(error); return; }
+            renderLetters(data || []);
+            checkLetterNotifications(data || []);
+        }
+
+        function renderLetters(letters) {
+            const list   = document.getElementById("letters-list");
+            const empty  = document.getElementById("letters-empty");
+            if (!letters.length) { list.innerHTML = ""; empty.style.display = "block"; return; }
+            empty.style.display = "none";
+            const today = new Date().toISOString().split("T")[0];
+
+            list.innerHTML = letters.map(l => {
+                const isUnlocked = l.unlock_date <= today;
+                const dateLabel  = new Date(l.unlock_date + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"});
+                return `
+        <div class="letter-card ${isUnlocked ? "" : "locked"}" id="lcard-${l.id}">
+            <button class="letter-del-btn" onclick="deleteLetter(${l.id})">✕</button>
+            <div class="letter-card-title">${isUnlocked ? "💌 " : "🔒 "}${l.title}</div>
+            <div class="letter-card-date">📅 ${dateLabel}</div>
+            ${isUnlocked
+                ? `<button class="save-btn" style="padding:8px 18px;font-size:13px;margin-top:6px;"
+                       onclick="openLetterModal(${l.id})">Abrir carta 💖</button>`
+                : `<div class="letter-lock-badge">🔒 Se abre el ${dateLabel}</div>`
+            }
+        </div>`;
+            }).join("");
+        }
+
+        function openLetterModal(id) {
+            const letter = (window._allLetters || []).find(l => l.id === id);
+            if (!letter) return;
+            const dateLabel = new Date(letter.unlock_date + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"});
+            document.getElementById("lo-title").textContent = letter.title;
+            document.getElementById("lo-date").textContent  = "📅 Desbloqueada el " + dateLabel;
+            document.getElementById("lo-body").textContent  = letter.body;
+            document.getElementById("letter-open-overlay").classList.add("open");
+            launchConfetti();
+        }
+        function closeLetterModal() {
+            document.getElementById("letter-open-overlay").classList.remove("open");
+        }
+
+        // Guardar cache de cartas para el modal
+        const _origRenderLetters = renderLetters;
+        window.renderLetters = function(letters) {
+            window._allLetters = letters;
+            _origRenderLetters(letters);
+        };
+
+        // Notificaciones Web: avisa cuando hay carta desbloqueada hoy
+        async function checkLetterNotifications(letters) {
+            if (!("Notification" in window)) return;
+            const today = new Date().toISOString().split("T")[0];
+            const newlyUnlocked = letters.filter(l => l.unlock_date === today && !l.opened);
+            if (!newlyUnlocked.length) return;
+
+            // Pedir permiso si no lo tiene
+            if (Notification.permission === "default") {
+                await Notification.requestPermission();
+            }
+            if (Notification.permission !== "granted") return;
+
+            // Solo notificar una vez por sesión
+            const notifKey = "notified_" + today;
+            if (localStorage.getItem(notifKey)) return;
+            localStorage.setItem(notifKey, "1");
+
+            newlyUnlocked.forEach(l => {
+                new Notification("💌 ¡Tienes una carta de amor!", {
+                    body: l.title + " — ¡Ya puedes abrirla!",
+                    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💌</text></svg>"
+                });
+            });
+        }
+
+        // ── CONFETTI ─────────────────────────────────────────────────
+        function launchConfetti() {
+            const canvas = document.getElementById("confetti-canvas");
+            canvas.style.display = "block";
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const ctx = canvas.getContext("2d");
+            const colors = ["#D4537E","#378ADD","#F4C0D1","#FFD700","#FF6B9D","#A8EDEA"];
+            const particles = Array.from({length: 80}, () => ({
+                x: Math.random() * canvas.width,
+                y: -20,
+                r: Math.random() * 7 + 3,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                speed: Math.random() * 3 + 2,
+                angle: Math.random() * Math.PI * 2,
+                spin:  (Math.random() - 0.5) * 0.2,
+                drift: (Math.random() - 0.5) * 2
+            }));
+            let frame;
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                let alive = false;
+                particles.forEach(p => {
+                    p.y += p.speed;
+                    p.x += p.drift;
+                    p.angle += p.spin;
+                    if (p.y < canvas.height + 20) alive = true;
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.angle);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+                    ctx.restore();
+                });
+                if (alive) { frame = requestAnimationFrame(draw); }
+                else { canvas.style.display = "none"; cancelAnimationFrame(frame); }
+            }
+            draw();
+            setTimeout(() => { canvas.style.display = "none"; cancelAnimationFrame(frame); }, 4000);
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // ── NOTAS DE VOZ ─────────────────────────────────────────────
+        // ══════════════════════════════════════════════════════════════
+        let mediaRecorder = null;
+        let audioChunks   = [];
+        let recTimerInt   = null;
+        let recSeconds    = 0;
+        let recordedAudioB64 = null;
+        let recordedDuration  = 0;
+        const activeAudios = {}; // id -> HTMLAudioElement
+
+        function formatDur(secs) {
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
+            return `${m}:${String(s).padStart(2,"0")}`;
+        }
+
+        async function toggleRecording() {
+            if (mediaRecorder && mediaRecorder.state === "recording") {
+                stopRecording();
+            } else {
+                await startRecording();
+            }
+        }
+
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                audioChunks = [];
+                mediaRecorder = new MediaRecorder(stream);
+                mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(audioChunks, { type: "audio/webm" });
+                    recordedDuration = recSeconds;
+                    const reader = new FileReader();
+                    reader.onload = ev => {
+                        recordedAudioB64 = ev.target.result; // data:audio/webm;base64,...
+                        document.getElementById("voice-rec-label").textContent = `✅ Grabado: ${formatDur(recordedDuration)}`;
+                        document.getElementById("voice-rec-timer").style.display = "none";
+                        document.getElementById("voice-rec-clear").style.display = "flex";
+                        document.getElementById("voice-rec-btn").innerHTML = "🎙️";
+                        document.getElementById("voice-rec-btn").classList.remove("recording");
+                    };
+                    reader.readAsDataURL(blob);
+                    stream.getTracks().forEach(t => t.stop());
+                };
+                mediaRecorder.start();
+                recSeconds = 0;
+                document.getElementById("voice-rec-btn").classList.add("recording");
+                document.getElementById("voice-rec-btn").innerHTML = "⏹";
+                document.getElementById("voice-rec-label").textContent = "Grabando...";
+                document.getElementById("voice-rec-timer").style.display = "block";
+                document.getElementById("voice-rec-timer").textContent = "0:00";
+                recTimerInt = setInterval(() => {
+                    recSeconds++;
+                    document.getElementById("voice-rec-timer").textContent = formatDur(recSeconds);
+                    if (recSeconds >= 120) stopRecording(); // límite 2 min
+                }, 1000);
+            } catch (err) {
+                showToast("🎙️ No se pudo acceder al micrófono");
+            }
+        }
+
+        function stopRecording() {
+            clearInterval(recTimerInt);
+            if (mediaRecorder && mediaRecorder.state !== "inactive") mediaRecorder.stop();
+        }
+
+        function clearRecording() {
+            recordedAudioB64 = null;
+            recordedDuration = 0;
+            document.getElementById("voice-rec-label").textContent = "Toca para grabar un mensaje de voz";
+            document.getElementById("voice-rec-clear").style.display = "none";
+            document.getElementById("voice-rec-timer").style.display = "none";
+            document.getElementById("voice-rec-btn").innerHTML = "🎙️";
+            document.getElementById("voice-rec-btn").classList.remove("recording");
+        }
+
+        // Reproducción del audio en note cards
+        function toggleAudio(noteId, _key) {
+            const note = allNotes.find(n => n.id === noteId);
+            if (!note || !note.audio_base64) return;
+            const btn  = document.querySelector(`#aplayer-${noteId} .audio-play-btn`);
+            const prog = document.getElementById(`aprog-${noteId}`);
+            const dur  = document.getElementById(`adur-${noteId}`);
+
+            if (activeAudios[noteId]) {
+                const audio = activeAudios[noteId];
+                if (!audio.paused) { audio.pause(); btn.textContent = "▶"; return; }
+                audio.play(); btn.textContent = "⏸"; return;
+            }
+
+            const audio = new Audio(note.audio_base64);
+            activeAudios[noteId] = audio;
+            audio.ontimeupdate = () => {
+                if (!audio.duration) return;
+                const pct = (audio.currentTime / audio.duration) * 100;
+                prog.style.width = pct + "%";
+                dur.textContent  = formatDur(Math.floor(audio.currentTime));
+            };
+            audio.onended = () => {
+                btn.textContent   = "▶";
+                prog.style.width  = "0%";
+                dur.textContent   = formatDur(note.audio_duration || 0);
+                delete activeAudios[noteId];
+            };
+            audio.play();
+            btn.textContent = "⏸";
+        }
+
+        function seekAudio(event, noteId) {
+            const audio = activeAudios[noteId];
+            if (!audio || !audio.duration) return;
+            const wrap = event.currentTarget;
+            const pct  = event.offsetX / wrap.offsetWidth;
+            audio.currentTime = pct * audio.duration;
+        }
+
+        // Modificar saveNote para incluir audio
+        const _origSaveNote = saveNote;
+        window.saveNote = async function() {
+            // Inyectar audio en la inserción
+            const title = document.getElementById("note-title").value.trim();
+            const body  = document.getElementById("note-body").value.trim();
+            if (!title && !body) { showToast("✏️ Escribe algo primero"); return; }
+            const btn = document.getElementById("save-note-btn");
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span>Guardando...';
+            const date = new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
+            const insertData = {
+                title: title || "Sin título",
+                body,
+                mood,
+                date,
+                reactions: {},
+                audio_base64: recordedAudioB64 || null,
+                audio_duration: recordedAudioB64 ? recordedDuration : null
+            };
+            const { error } = await db.from("notes").insert(insertData);
+            btn.disabled = false;
+            btn.innerHTML = "Guardar recuerdo 💾";
+            if (error) { showToast("❌ Error al guardar"); return; }
+            document.getElementById("note-title").value = "";
+            document.getElementById("note-body").value = "";
+            mood = "";
+            document.querySelectorAll(".mood-chip").forEach(b => b.classList.remove("on"));
+            clearRecording();
+            showToast(recordedAudioB64 ? "🎙️ Recuerdo con voz guardado 💙" : "💙 Recuerdo guardado para los dos");
+            await loadNotes();
+        };
+
+        // Integrar loadLetters en loadAll
+        const _origLoadAll = loadAll;
+        window.loadAll = async function() {
+            await Promise.all([loadPhotos(), loadNotes(), loadLetters()]);
+        };
     </script>
 </body>
 
