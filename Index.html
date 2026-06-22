@@ -1413,6 +1413,89 @@
             cursor: pointer;
         }
 
+        /* ── SELECTOR DE AUTOR ── */
+        #author-screen {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(6px);
+            z-index: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .author-box {
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: 0 12px 48px rgba(212,83,126,0.2);
+            width: 100%;
+            max-width: 320px;
+        }
+        .author-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--pink);
+            margin-bottom: 6px;
+        }
+        .author-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+        .author-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .author-btn {
+            flex: 1;
+            padding: 14px 10px;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .author-btn.ever {
+            background: linear-gradient(135deg, #378ADD, #185FA5);
+            color: white;
+            box-shadow: 0 4px 14px rgba(55,138,221,0.35);
+        }
+        .author-btn.rossi {
+            background: linear-gradient(135deg, var(--pink), #C0395F);
+            color: white;
+            box-shadow: 0 4px 14px rgba(212,83,126,0.35);
+        }
+        .author-btn:hover { transform: translateY(-2px); }
+
+        /* Badge de autor en note-card */
+        .note-author-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 500;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-bottom: 6px;
+            letter-spacing: 0.5px;
+        }
+        .note-author-badge.ever {
+            background: #E6F1FB;
+            color: #185FA5;
+            border-left: 3px solid #378ADD;
+        }
+        .note-author-badge.rossi {
+            background: var(--pink-light);
+            color: #993556;
+            border-left: 3px solid var(--pink);
+        }
+        .note-card.author-ever  { border-left-color: var(--blue); }
+        .note-card.author-rossi { border-left-color: var(--pink); }
+
         /* ── NOTA DE VOZ ── */
         .voice-recorder {
             display: flex;
@@ -1532,6 +1615,18 @@
         </div>
     </div>
 
+    <!-- SELECTOR DE AUTOR -->
+    <div id="author-screen" style="display:none;">
+        <div class="author-box">
+            <h2>¿Quién eres? 💕</h2>
+            <p>Así sabremos quién escribió cada recuerdo</p>
+            <div class="author-btns">
+                <button class="author-btn ever" onclick="selectAuthor('Ever')">💙 Ever</button>
+                <button class="author-btn rossi" onclick="selectAuthor('Rossi')">🩷 Rossi</button>
+            </div>
+        </div>
+    </div>
+
     <!-- LIGHTBOX mejorado -->
     <div id="lightbox">
         <button id="lightbox-close" onclick="closeLightbox()">✕</button>
@@ -1614,9 +1709,10 @@
         <div class="app-header">
             <div>
                 <div class="header-title">💖 Nuestros <em>Recuerdos</em></div>
-                <div class="header-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
+                <div class="header-sub" id="header-author-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
             </div>
-            <div style="display:flex;align-items:center;gap:0;">
+            <div style="display:flex;align-items:center;gap:6px;">
+                <button class="logout-btn" onclick="switchUser()" title="Cambiar quién soy" style="font-size:12px;padding:6px 12px;">👤 Cambiar</button>
                 <button class="settings-btn" onclick="openSettings()" title="Ajustes">⚙️</button>
                 <button class="logout-btn" onclick="logout()">Salir</button>
             </div>
@@ -1727,9 +1823,29 @@
         const db = createClient(SUPABASE_URL, SUPABASE_KEY);
 
         let mood = "";
-        let currentView = "grid";   // grid | large | list
-        let allPhotos = [];       // caché para el lightbox
-        let lbIndex = 0;        // índice activo en el lightbox
+        let currentView = "grid";
+        let allPhotos = [];
+        let lbIndex = 0;
+
+        // ── AUTOR ─────────────────────────────────────────────────────
+        let currentAuthor = localStorage.getItem("diary_author") || "";
+
+        function selectAuthor(name) {
+            currentAuthor = name;
+            localStorage.setItem("diary_author", name);
+            document.getElementById("author-screen").style.display = "none";
+            // Actualizar subtítulo del header
+            updateHeaderAuthor();
+        }
+
+        function updateHeaderAuthor() {
+            const sub = document.getElementById("header-author-sub");
+            if (sub && currentAuthor) {
+                sub.textContent = currentAuthor === "Ever"
+                    ? "💙 Hola Ever, bienvenido"
+                    : "🩷 Hola Rossi, bienvenida";
+            }
+        }
 
         // ── REACCIONES: emoji usable ──────────────────────────────────
         // Guardamos reacciones en localStorage con clave "r_photo_{id}" o "r_note_{id}"
@@ -1842,6 +1958,12 @@
                 const app = document.getElementById("app");
                 app.style.display = "flex";
                 app.style.flexDirection = "column";
+                // Mostrar selector de autor si no está guardado
+                if (!currentAuthor) {
+                    document.getElementById("author-screen").style.display = "flex";
+                } else {
+                    updateHeaderAuthor();
+                }
                 loadAll();
             } else {
                 const e = document.getElementById("lock-error");
@@ -1852,10 +1974,17 @@
         }
         document.getElementById("pass-input").addEventListener("keydown", e => { if (e.key === "Enter") checkPass(); });
 
+        function switchUser() {
+            document.getElementById("author-screen").style.display = "flex";
+        }
+
         function logout() {
             document.getElementById("app").style.display = "none";
             document.getElementById("lock-screen").style.display = "flex";
             document.getElementById("pass-input").value = "";
+            // Limpiar autor para que vuelva a elegir al entrar
+            currentAuthor = "";
+            localStorage.removeItem("diary_author");
         }
 
         function switchTab(name, el) {
@@ -2078,7 +2207,7 @@
             btn.disabled = true;
             btn.innerHTML = '<span class="spinner"></span>Guardando...';
             const date = new Date().toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
-            const { error } = await db.from("notes").insert({ title: title || "Sin título", body, mood, date, reactions: {} });
+            const { error } = await db.from("notes").insert({ title: title || "Sin título", body, mood, date, reactions: {}, author: currentAuthor || null });
             btn.disabled = false;
             btn.innerHTML = "Guardar recuerdo 💾";
             if (error) { showToast("❌ Error al guardar"); return; }
@@ -2126,8 +2255,9 @@
                     }).join("");
 
                 return `
-        <div class="note-card" id="ncard-${n.id}">
+        <div class="note-card author-${(n.author||'').toLowerCase()}" id="ncard-${n.id}">
             <button class="note-del-btn" onclick="deleteNote(${n.id})">✕</button>
+            ${n.author ? `<div class="note-author-badge ${n.author.toLowerCase()}">${n.author === 'Ever' ? '💙' : '🩷'} ${n.author}</div>` : ''}
             <div class="note-card-title">${n.title}</div>
             ${n.mood ? `<div class="note-card-mood">${n.mood}</div>` : ""}
             ${n.body ? `<div class="note-card-body">${n.body}</div>` : ""}
@@ -2527,6 +2657,7 @@
                 mood,
                 date,
                 reactions: {},
+                author: currentAuthor || null,
                 audio_base64: recordedAudioB64 || null,
                 audio_duration: recordedAudioB64 ? recordedDuration : null
             };
