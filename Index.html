@@ -5,6 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nuestros Recuerdos 💖</title>
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="theme-color" content="#D4537E" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="icon" href="./icon-192.png" />
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
         rel="stylesheet" />
@@ -1118,32 +1122,37 @@
             background-size: cover;
             background-position: center;
         }
+
         #app.has-bg .tab-content {
             background: rgba(253, 248, 245, 0.88);
             backdrop-filter: blur(6px);
         }
+
         #app.has-bg .app-header {
-            background: linear-gradient(135deg, rgba(212,83,126,0.85), rgba(55,138,221,0.85) 50%, rgba(99,153,34,0.85));
+            background: linear-gradient(135deg, rgba(212, 83, 126, 0.85), rgba(55, 138, 221, 0.85) 50%, rgba(99, 153, 34, 0.85));
             backdrop-filter: blur(8px);
         }
+
         #app.has-bg .tabs {
-            background: rgba(255,255,255,0.82);
+            background: rgba(255, 255, 255, 0.82);
             backdrop-filter: blur(8px);
         }
+
         #lock-screen.has-bg {
             background-attachment: fixed;
             background-size: cover;
             background-position: center;
         }
+
         #lock-screen.has-bg .lock-box {
-            background: rgba(255,255,255,0.92);
+            background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(12px);
         }
 
         /* ── BOTÓN SETTINGS ── */
         .settings-btn {
-            background: rgba(255,255,255,0.2);
-            border: 1.5px solid rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.2);
+            border: 1.5px solid rgba(255, 255, 255, 0.5);
             color: white;
             border-radius: 50%;
             width: 36px;
@@ -1156,13 +1165,16 @@
             transition: background 0.2s;
             margin-right: 8px;
         }
-        .settings-btn:hover { background: rgba(255,255,255,0.35); }
+
+        .settings-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
 
         /* ── MODAL SETTINGS ── */
         .settings-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 2000;
             display: none;
             align-items: center;
@@ -1170,24 +1182,31 @@
             padding: 20px;
             backdrop-filter: blur(4px);
         }
-        .settings-overlay.open { display: flex; }
+
+        .settings-overlay.open {
+            display: flex;
+        }
+
         .settings-box {
             background: white;
             border-radius: var(--radius);
             padding: 28px 24px;
             max-width: 360px;
             width: 100%;
-            box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
         }
+
         .settings-title {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
             color: var(--pink);
             margin-bottom: 20px;
         }
+
         .settings-section {
             margin-bottom: 20px;
         }
+
         .settings-label {
             font-size: 11px;
             font-weight: 500;
@@ -1197,6 +1216,7 @@
             margin-bottom: 10px;
             display: block;
         }
+
         .settings-bg-preview {
             width: 100%;
             height: 80px;
@@ -1214,15 +1234,29 @@
             overflow: hidden;
             position: relative;
         }
-        .settings-bg-preview:hover { border-color: var(--pink); background: #F4C0D1; }
+
+        .settings-bg-preview:hover {
+            border-color: var(--pink);
+            background: #F4C0D1;
+        }
+
         .settings-bg-preview img {
-            position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
+
         .settings-bg-preview .overlay-label {
-            position: relative; z-index: 1;
-            background: rgba(255,255,255,0.75);
-            padding: 4px 12px; border-radius: 20px; font-size: 12px;
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.75);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
         }
+
         .settings-remove-bg {
             margin-top: 8px;
             width: 100%;
@@ -1236,7 +1270,11 @@
             color: #E24B4A;
             transition: all 0.15s;
         }
-        .settings-remove-bg:hover { background: #FFF0F0; }
+
+        .settings-remove-bg:hover {
+            background: #FFF0F0;
+        }
+
         .settings-close {
             width: 100%;
             padding: 12px;
@@ -1252,16 +1290,19 @@
         }
 
         /* ── CARTAS DE AMOR ── */
-        .tab-letters { }
+        .tab-letters {}
+
         .letter-form-card {
             background: white;
             border-radius: var(--radius);
             padding: 20px;
-            box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
             margin-bottom: 20px;
             border-top: 4px solid var(--pink);
         }
-        .letter-input, .letter-textarea {
+
+        .letter-input,
+        .letter-textarea {
             width: 100%;
             border: 1.5px solid #F4C0D1;
             border-radius: var(--radius-sm);
@@ -1274,8 +1315,17 @@
             outline: none;
             margin-bottom: 14px;
         }
-        .letter-input:focus, .letter-textarea:focus { border-color: var(--pink); }
-        .letter-textarea { min-height: 100px; resize: vertical; }
+
+        .letter-input:focus,
+        .letter-textarea:focus {
+            border-color: var(--pink);
+        }
+
+        .letter-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
         .letter-date-input {
             width: 100%;
             border: 1.5px solid #F4C0D1;
@@ -1289,7 +1339,10 @@
             margin-bottom: 14px;
             cursor: pointer;
         }
-        .letter-date-input:focus { border-color: var(--pink); }
+
+        .letter-date-input:focus {
+            border-color: var(--pink);
+        }
 
         /* Cards de cartas */
         .letter-card {
@@ -1297,16 +1350,21 @@
             border-radius: var(--radius);
             padding: 18px 20px;
             margin-bottom: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
             border-left: 5px solid var(--pink);
             position: relative;
             transition: transform 0.15s;
         }
-        .letter-card:hover { transform: translateX(3px); }
+
+        .letter-card:hover {
+            transform: translateX(3px);
+        }
+
         .letter-card.locked {
             border-left-color: #B5D4F4;
             opacity: 0.85;
         }
+
         .letter-card-title {
             font-size: 15px;
             font-weight: 500;
@@ -1314,17 +1372,23 @@
             margin-bottom: 4px;
             padding-right: 30px;
         }
-        .letter-card.locked .letter-card-title { color: var(--text-muted); }
+
+        .letter-card.locked .letter-card-title {
+            color: var(--text-muted);
+        }
+
         .letter-card-date {
             font-size: 11px;
             color: var(--text-muted);
             margin-bottom: 8px;
         }
+
         .letter-card-body {
             font-size: 13px;
             color: var(--text-muted);
             line-height: 1.65;
         }
+
         .letter-lock-badge {
             display: inline-flex;
             align-items: center;
@@ -1337,6 +1401,7 @@
             border-radius: 20px;
             margin-top: 6px;
         }
+
         .letter-del-btn {
             position: absolute;
             top: 12px;
@@ -1348,13 +1413,16 @@
             cursor: pointer;
             transition: color 0.15s;
         }
-        .letter-del-btn:hover { color: #E24B4A; }
+
+        .letter-del-btn:hover {
+            color: #E24B4A;
+        }
 
         /* Modal carta desbloqueada */
         .letter-open-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0, 0, 0, 0.65);
             z-index: 3000;
             display: none;
             align-items: center;
@@ -1362,7 +1430,11 @@
             padding: 20px;
             backdrop-filter: blur(6px);
         }
-        .letter-open-overlay.open { display: flex; }
+
+        .letter-open-overlay.open {
+            display: flex;
+        }
+
         .letter-open-box {
             background: white;
             border-radius: var(--radius);
@@ -1370,25 +1442,40 @@
             max-width: 380px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 16px 60px rgba(212,83,126,0.3);
-            animation: letterPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+            box-shadow: 0 16px 60px rgba(212, 83, 126, 0.3);
+            animation: letterPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
+
         @keyframes letterPop {
-            from { transform: scale(0.7); opacity: 0; }
-            to   { transform: scale(1);   opacity: 1; }
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        .letter-open-icon { font-size: 52px; margin-bottom: 12px; }
+
+        .letter-open-icon {
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
         .letter-open-title {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
             color: var(--pink);
             margin-bottom: 6px;
         }
+
         .letter-open-date {
             font-size: 12px;
             color: var(--text-muted);
             margin-bottom: 16px;
         }
+
         .letter-open-body {
             font-size: 14px;
             color: var(--text);
@@ -1400,6 +1487,7 @@
             margin-bottom: 20px;
             white-space: pre-wrap;
         }
+
         .letter-open-close {
             width: 100%;
             padding: 12px;
@@ -1417,7 +1505,7 @@
         #author-screen {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.55);
+            background: rgba(0, 0, 0, 0.55);
             backdrop-filter: blur(6px);
             z-index: 500;
             display: flex;
@@ -1425,31 +1513,36 @@
             justify-content: center;
             padding: 2rem;
         }
+
         .author-box {
             background: white;
             border-radius: var(--radius);
             padding: 32px 28px;
             text-align: center;
-            box-shadow: 0 12px 48px rgba(212,83,126,0.2);
+            box-shadow: 0 12px 48px rgba(212, 83, 126, 0.2);
             width: 100%;
             max-width: 320px;
         }
+
         .author-box h2 {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
             color: var(--pink);
             margin-bottom: 6px;
         }
+
         .author-box p {
             font-size: 13px;
             color: var(--text-muted);
             margin-bottom: 24px;
         }
+
         .author-btns {
             display: flex;
             gap: 12px;
             justify-content: center;
         }
+
         .author-btn {
             flex: 1;
             padding: 14px 10px;
@@ -1461,17 +1554,22 @@
             cursor: pointer;
             transition: transform 0.15s, box-shadow 0.15s;
         }
+
         .author-btn.ever {
             background: linear-gradient(135deg, #378ADD, #185FA5);
             color: white;
-            box-shadow: 0 4px 14px rgba(55,138,221,0.35);
+            box-shadow: 0 4px 14px rgba(55, 138, 221, 0.35);
         }
+
         .author-btn.rossi {
             background: linear-gradient(135deg, var(--pink), #C0395F);
             color: white;
-            box-shadow: 0 4px 14px rgba(212,83,126,0.35);
+            box-shadow: 0 4px 14px rgba(212, 83, 126, 0.35);
         }
-        .author-btn:hover { transform: translateY(-2px); }
+
+        .author-btn:hover {
+            transform: translateY(-2px);
+        }
 
         /* Badge de autor en note-card */
         .note-author-badge {
@@ -1483,18 +1581,26 @@
             margin-bottom: 6px;
             letter-spacing: 0.5px;
         }
+
         .note-author-badge.ever {
             background: #E6F1FB;
             color: #185FA5;
             border-left: 3px solid #378ADD;
         }
+
         .note-author-badge.rossi {
             background: var(--pink-light);
             color: #993556;
             border-left: 3px solid var(--pink);
         }
-        .note-card.author-ever  { border-left-color: var(--blue); }
-        .note-card.author-rossi { border-left-color: var(--pink); }
+
+        .note-card.author-ever {
+            border-left-color: var(--blue);
+        }
+
+        .note-card.author-rossi {
+            border-left-color: var(--pink);
+        }
 
         /* ── NOTA DE VOZ ── */
         .voice-recorder {
@@ -1507,6 +1613,7 @@
             border-radius: var(--radius-sm);
             background: var(--pink-light);
         }
+
         .voice-rec-btn {
             width: 42px;
             height: 42px;
@@ -1522,25 +1629,37 @@
             transition: all 0.2s;
             flex-shrink: 0;
         }
+
         .voice-rec-btn.recording {
             background: #E24B4A;
             animation: recPulse 1s ease-in-out infinite;
         }
+
         @keyframes recPulse {
-            0%,100% { box-shadow: 0 0 0 0 rgba(226,75,74,0.4); }
-            50%      { box-shadow: 0 0 0 8px rgba(226,75,74,0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(226, 75, 74, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(226, 75, 74, 0);
+            }
         }
+
         .voice-rec-info {
             flex: 1;
             font-size: 13px;
             color: var(--text-muted);
         }
+
         .voice-rec-timer {
             font-size: 16px;
             font-weight: 500;
             color: var(--pink);
             font-variant-numeric: tabular-nums;
         }
+
         .voice-rec-clear {
             background: none;
             border: none;
@@ -1560,19 +1679,27 @@
             background: var(--blue-light);
             border-radius: var(--radius-sm);
         }
+
         .audio-play-btn {
-            width: 32px; height: 32px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             border: none;
             background: var(--blue);
             color: white;
             font-size: 13px;
             cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             flex-shrink: 0;
             transition: background 0.2s;
         }
-        .audio-play-btn:hover { background: #185FA5; }
+
+        .audio-play-btn:hover {
+            background: #185FA5;
+        }
+
         .audio-progress-wrap {
             flex: 1;
             height: 4px;
@@ -1581,6 +1708,7 @@
             cursor: pointer;
             position: relative;
         }
+
         .audio-progress-bar {
             height: 100%;
             background: var(--blue);
@@ -1588,6 +1716,7 @@
             width: 0%;
             transition: width 0.1s linear;
         }
+
         .audio-duration {
             font-size: 11px;
             color: var(--blue);
@@ -1680,11 +1809,19 @@
             <div class="settings-title">⚙️ Ajustes</div>
             <div class="settings-section">
                 <span class="settings-label">Fondo personalizado</span>
-                <div class="settings-bg-preview" id="bg-preview" onclick="document.getElementById('bg-file-input').click()">
+                <div class="settings-bg-preview" id="bg-preview"
+                    onclick="document.getElementById('bg-file-input').click()">
                     <span class="overlay-label">🖼️ Toca para elegir una foto</span>
                 </div>
-                <input type="file" id="bg-file-input" accept="image/*" style="display:none" onchange="applyBackground(event)" />
+                <input type="file" id="bg-file-input" accept="image/*" style="display:none"
+                    onchange="applyBackground(event)" />
                 <button class="settings-remove-bg" onclick="removeBackground()">🗑️ Quitar fondo</button>
+            </div>
+            <div class="settings-section">
+                <span class="settings-label">Notificaciones</span>
+                <button class="settings-remove-bg" id="push-toggle-btn" style="background:var(--blue-light);color:var(--blue);" onclick="togglePushSubscription()">
+                    🔔 Activar notificaciones
+                </button>
             </div>
             <button class="settings-close" onclick="closeSettings()">Listo ✓</button>
         </div>
@@ -1712,7 +1849,9 @@
                 <div class="header-sub" id="header-author-sub">Desde el 18 de abril de 2024 • En la nube ☁️</div>
             </div>
             <div style="display:flex;align-items:center;gap:6px;">
-                <button class="logout-btn" onclick="switchUser()" title="Cambiar quién soy" style="font-size:12px;padding:6px 12px;">👤 Cambiar</button>
+                <button class="settings-btn" onclick="sendThinkingOfYou()" title="Pensando en ti">💭</button>
+                <button class="logout-btn" onclick="switchUser()" title="Cambiar quién soy"
+                    style="font-size:12px;padding:6px 12px;">👤 Cambiar</button>
                 <button class="settings-btn" onclick="openSettings()" title="Ajustes">⚙️</button>
                 <button class="logout-btn" onclick="logout()">Salir</button>
             </div>
@@ -1771,12 +1910,14 @@
                 <!-- NOTA DE VOZ -->
                 <label class="form-label">Nota de voz (opcional)</label>
                 <div class="voice-recorder" id="voice-recorder">
-                    <button class="voice-rec-btn" id="voice-rec-btn" onclick="toggleRecording()" title="Grabar">🎙️</button>
+                    <button class="voice-rec-btn" id="voice-rec-btn" onclick="toggleRecording()"
+                        title="Grabar">🎙️</button>
                     <div class="voice-rec-info">
                         <div id="voice-rec-label">Toca para grabar un mensaje de voz</div>
                         <div class="voice-rec-timer" id="voice-rec-timer" style="display:none;">0:00</div>
                     </div>
-                    <button class="voice-rec-clear" id="voice-rec-clear" style="display:none;" onclick="clearRecording()" title="Borrar">✕</button>
+                    <button class="voice-rec-clear" id="voice-rec-clear" style="display:none;"
+                        onclick="clearRecording()" title="Borrar">✕</button>
                 </div>
 
                 <button class="save-btn" id="save-note-btn" onclick="saveNote()">Guardar recuerdo 💾</button>
@@ -1792,12 +1933,15 @@
         <div id="tab-cartas" class="tab-content tab-letters">
             <div class="letter-form-card">
                 <label class="form-label">Para quién es la carta</label>
-                <input class="letter-input" id="letter-title" placeholder="Ej: Para ti, el día de nuestro aniversario..." />
+                <input class="letter-input" id="letter-title"
+                    placeholder="Ej: Para ti, el día de nuestro aniversario..." />
                 <label class="form-label">Escribe tu carta de amor</label>
-                <textarea class="letter-textarea" id="letter-body" placeholder="Escribe todo lo que sientes... se guardará bajo llave hasta la fecha que elijas 🔒"></textarea>
+                <textarea class="letter-textarea" id="letter-body"
+                    placeholder="Escribe todo lo que sientes... se guardará bajo llave hasta la fecha que elijas 🔒"></textarea>
                 <label class="form-label">¿Cuándo se podrá abrir? 📅</label>
                 <input class="letter-date-input" type="date" id="letter-date" />
-                <button class="save-btn" id="save-letter-btn" onclick="saveLetter()" style="background:linear-gradient(135deg,var(--pink),#C0395F);box-shadow:0 4px 14px rgba(212,83,126,0.35);">
+                <button class="save-btn" id="save-letter-btn" onclick="saveLetter()"
+                    style="background:linear-gradient(135deg,var(--pink),#C0395F);box-shadow:0 4px 14px rgba(212,83,126,0.35);">
                     Guardar carta 💌
                 </button>
             </div>
@@ -2255,7 +2399,7 @@
                     }).join("");
 
                 return `
-        <div class="note-card author-${(n.author||'').toLowerCase()}" id="ncard-${n.id}">
+        <div class="note-card author-${(n.author || '').toLowerCase()}" id="ncard-${n.id}">
             <button class="note-del-btn" onclick="deleteNote(${n.id})">✕</button>
             ${n.author ? `<div class="note-author-badge ${n.author.toLowerCase()}">${n.author === 'Ever' ? '💙' : '🩷'} ${n.author}</div>` : ''}
             <div class="note-card-title">${n.title}</div>
@@ -2263,11 +2407,11 @@
             ${n.body ? `<div class="note-card-body">${n.body}</div>` : ""}
             ${n.audio_base64 ? `
             <div class="note-audio-player" id="aplayer-${n.id}">
-                <button class="audio-play-btn" onclick="toggleAudio(${n.id},'${n.audio_base64.substring(0,20)}')">▶</button>
+                <button class="audio-play-btn" onclick="toggleAudio(${n.id},'${n.audio_base64.substring(0, 20)}')">▶</button>
                 <div class="audio-progress-wrap" onclick="seekAudio(event,${n.id})">
                     <div class="audio-progress-bar" id="aprog-${n.id}"></div>
                 </div>
-                <span class="audio-duration" id="adur-${n.id}">${formatDur(n.audio_duration||0)}</span>
+                <span class="audio-duration" id="adur-${n.id}">${formatDur(n.audio_duration || 0)}</span>
             </div>` : ""}
             <div class="note-card-date">${n.date}</div>
             <div class="note-reactions">
@@ -2366,7 +2510,7 @@
         // ══════════════════════════════════════════════════════════════
         async function saveLetter() {
             const title = document.getElementById("letter-title").value.trim();
-            const body  = document.getElementById("letter-body").value.trim();
+            const body = document.getElementById("letter-body").value.trim();
             const dateVal = document.getElementById("letter-date").value;
             if (!title || !body) { showToast("✏️ Escribe el título y la carta"); return; }
             if (!dateVal) { showToast("📅 Elige una fecha de apertura"); return; }
@@ -2391,7 +2535,7 @@
             document.getElementById("letter-title").value = "";
             document.getElementById("letter-body").value = "";
             document.getElementById("letter-date").value = "";
-            showToast("💌 Carta guardada, se abrirá el " + new Date(dateVal + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"}));
+            showToast("💌 Carta guardada, se abrirá el " + new Date(dateVal + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }));
             await loadLetters();
         }
 
@@ -2411,25 +2555,25 @@
         }
 
         function renderLetters(letters) {
-            const list   = document.getElementById("letters-list");
-            const empty  = document.getElementById("letters-empty");
+            const list = document.getElementById("letters-list");
+            const empty = document.getElementById("letters-empty");
             if (!letters.length) { list.innerHTML = ""; empty.style.display = "block"; return; }
             empty.style.display = "none";
             const today = new Date().toISOString().split("T")[0];
 
             list.innerHTML = letters.map(l => {
                 const isUnlocked = l.unlock_date <= today;
-                const dateLabel  = new Date(l.unlock_date + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"});
+                const dateLabel = new Date(l.unlock_date + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
                 return `
         <div class="letter-card ${isUnlocked ? "" : "locked"}" id="lcard-${l.id}">
             <button class="letter-del-btn" onclick="deleteLetter(${l.id})">✕</button>
             <div class="letter-card-title">${isUnlocked ? "💌 " : "🔒 "}${l.title}</div>
             <div class="letter-card-date">📅 ${dateLabel}</div>
             ${isUnlocked
-                ? `<button class="save-btn" style="padding:8px 18px;font-size:13px;margin-top:6px;"
+                        ? `<button class="save-btn" style="padding:8px 18px;font-size:13px;margin-top:6px;"
                        onclick="openLetterModal(${l.id})">Abrir carta 💖</button>`
-                : `<div class="letter-lock-badge">🔒 Se abre el ${dateLabel}</div>`
-            }
+                        : `<div class="letter-lock-badge">🔒 Se abre el ${dateLabel}</div>`
+                    }
         </div>`;
             }).join("");
         }
@@ -2437,10 +2581,10 @@
         function openLetterModal(id) {
             const letter = (window._allLetters || []).find(l => l.id === id);
             if (!letter) return;
-            const dateLabel = new Date(letter.unlock_date + "T12:00:00").toLocaleDateString("es-CO", {day:"numeric",month:"long",year:"numeric"});
+            const dateLabel = new Date(letter.unlock_date + "T12:00:00").toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" });
             document.getElementById("lo-title").textContent = letter.title;
-            document.getElementById("lo-date").textContent  = "📅 Desbloqueada el " + dateLabel;
-            document.getElementById("lo-body").textContent  = letter.body;
+            document.getElementById("lo-date").textContent = "📅 Desbloqueada el " + dateLabel;
+            document.getElementById("lo-body").textContent = letter.body;
             document.getElementById("letter-open-overlay").classList.add("open");
             launchConfetti();
         }
@@ -2450,7 +2594,7 @@
 
         // Guardar cache de cartas para el modal
         const _origRenderLetters = renderLetters;
-        window.renderLetters = function(letters) {
+        window.renderLetters = function (letters) {
             window._allLetters = letters;
             _origRenderLetters(letters);
         };
@@ -2485,18 +2629,18 @@
         function launchConfetti() {
             const canvas = document.getElementById("confetti-canvas");
             canvas.style.display = "block";
-            canvas.width  = window.innerWidth;
+            canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             const ctx = canvas.getContext("2d");
-            const colors = ["#D4537E","#378ADD","#F4C0D1","#FFD700","#FF6B9D","#A8EDEA"];
-            const particles = Array.from({length: 80}, () => ({
+            const colors = ["#D4537E", "#378ADD", "#F4C0D1", "#FFD700", "#FF6B9D", "#A8EDEA"];
+            const particles = Array.from({ length: 80 }, () => ({
                 x: Math.random() * canvas.width,
                 y: -20,
                 r: Math.random() * 7 + 3,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 speed: Math.random() * 3 + 2,
                 angle: Math.random() * Math.PI * 2,
-                spin:  (Math.random() - 0.5) * 0.2,
+                spin: (Math.random() - 0.5) * 0.2,
                 drift: (Math.random() - 0.5) * 2
             }));
             let frame;
@@ -2526,17 +2670,17 @@
         // ── NOTAS DE VOZ ─────────────────────────────────────────────
         // ══════════════════════════════════════════════════════════════
         let mediaRecorder = null;
-        let audioChunks   = [];
-        let recTimerInt   = null;
-        let recSeconds    = 0;
+        let audioChunks = [];
+        let recTimerInt = null;
+        let recSeconds = 0;
         let recordedAudioB64 = null;
-        let recordedDuration  = 0;
+        let recordedDuration = 0;
         const activeAudios = {}; // id -> HTMLAudioElement
 
         function formatDur(secs) {
             const m = Math.floor(secs / 60);
             const s = secs % 60;
-            return `${m}:${String(s).padStart(2,"0")}`;
+            return `${m}:${String(s).padStart(2, "0")}`;
         }
 
         async function toggleRecording() {
@@ -2604,9 +2748,9 @@
         function toggleAudio(noteId, _key) {
             const note = allNotes.find(n => n.id === noteId);
             if (!note || !note.audio_base64) return;
-            const btn  = document.querySelector(`#aplayer-${noteId} .audio-play-btn`);
+            const btn = document.querySelector(`#aplayer-${noteId} .audio-play-btn`);
             const prog = document.getElementById(`aprog-${noteId}`);
-            const dur  = document.getElementById(`adur-${noteId}`);
+            const dur = document.getElementById(`adur-${noteId}`);
 
             if (activeAudios[noteId]) {
                 const audio = activeAudios[noteId];
@@ -2620,12 +2764,12 @@
                 if (!audio.duration) return;
                 const pct = (audio.currentTime / audio.duration) * 100;
                 prog.style.width = pct + "%";
-                dur.textContent  = formatDur(Math.floor(audio.currentTime));
+                dur.textContent = formatDur(Math.floor(audio.currentTime));
             };
             audio.onended = () => {
-                btn.textContent   = "▶";
-                prog.style.width  = "0%";
-                dur.textContent   = formatDur(note.audio_duration || 0);
+                btn.textContent = "▶";
+                prog.style.width = "0%";
+                dur.textContent = formatDur(note.audio_duration || 0);
                 delete activeAudios[noteId];
             };
             audio.play();
@@ -2636,16 +2780,16 @@
             const audio = activeAudios[noteId];
             if (!audio || !audio.duration) return;
             const wrap = event.currentTarget;
-            const pct  = event.offsetX / wrap.offsetWidth;
+            const pct = event.offsetX / wrap.offsetWidth;
             audio.currentTime = pct * audio.duration;
         }
 
         // Modificar saveNote para incluir audio
         const _origSaveNote = saveNote;
-        window.saveNote = async function() {
+        window.saveNote = async function () {
             // Inyectar audio en la inserción
             const title = document.getElementById("note-title").value.trim();
-            const body  = document.getElementById("note-body").value.trim();
+            const body = document.getElementById("note-body").value.trim();
             if (!title && !body) { showToast("✏️ Escribe algo primero"); return; }
             const btn = document.getElementById("save-note-btn");
             btn.disabled = true;
@@ -2676,8 +2820,126 @@
 
         // Integrar loadLetters en loadAll
         const _origLoadAll = loadAll;
-        window.loadAll = async function() {
+        window.loadAll = async function () {
             await Promise.all([loadPhotos(), loadNotes(), loadLetters()]);
+        };
+
+        // ══════════════════════════════════════════════════════════════
+        // ── PWA: REGISTRO DEL SERVICE WORKER ─────────────────────────
+        // ══════════════════════════════════════════════════════════════
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js").catch(err => {
+                    console.error("Error registrando service worker:", err);
+                });
+            });
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // ── PUSH NOTIFICATIONS REALES ─────────────────────────────────
+        // ══════════════════════════════════════════════════════════════
+        // Pega aquí tu VAPID Public Key (la misma que configuraste como
+        // secreto VAPID_PUBLIC_KEY en la Edge Function de Supabase).
+        const VAPID_PUBLIC_KEY = "BB9JLGjI4Rmck8-qqxAaVPOmAZ7xefoxRVAqNSxwFmXX4Mhw43ER5MbridjufIiN2WSM-Lxwtw2bWg5UJm84ipY";
+
+        function urlBase64ToUint8Array(base64String) {
+            const padding = "=".repeat((4 - base64String.length % 4) % 4);
+            const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+            const rawData = window.atob(base64);
+            return Uint8Array.from([...rawData].map(c => c.charCodeAt(0)));
+        }
+
+        async function isPushSubscribed() {
+            if (!("serviceWorker" in navigator) || !("PushManager" in window)) return false;
+            const reg = await navigator.serviceWorker.ready;
+            const sub = await reg.pushManager.getSubscription();
+            return !!sub;
+        }
+
+        async function updatePushButtonLabel() {
+            const btn = document.getElementById("push-toggle-btn");
+            if (!btn) return;
+            if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
+                btn.textContent = "🔕 No disponible en este navegador";
+                btn.disabled = true;
+                return;
+            }
+            const subscribed = await isPushSubscribed();
+            btn.textContent = subscribed ? "🔔 Notificaciones activadas ✓" : "🔔 Activar notificaciones";
+        }
+
+        async function togglePushSubscription() {
+            if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
+                showToast("🔕 Tu navegador no soporta notificaciones push");
+                return;
+            }
+            const btn = document.getElementById("push-toggle-btn");
+            const reg = await navigator.serviceWorker.ready;
+            const existing = await reg.pushManager.getSubscription();
+
+            if (existing) {
+                // Desactivar
+                await db.from("push_subscriptions").delete().eq("endpoint", existing.endpoint);
+                await existing.unsubscribe();
+                showToast("🔕 Notificaciones desactivadas");
+                await updatePushButtonLabel();
+                return;
+            }
+
+            // Activar
+            const permission = await Notification.requestPermission();
+            if (permission !== "granted") {
+                showToast("🔕 Necesitas dar permiso para recibir notificaciones");
+                return;
+            }
+            if (VAPID_PUBLIC_KEY === "PEGA_AQUI_TU_VAPID_PUBLIC_KEY") {
+                showToast("⚠️ Falta configurar la VAPID key en el código");
+                return;
+            }
+            try {
+                const sub = await reg.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+                });
+                const subJson = sub.toJSON();
+                const { error } = await db.from("push_subscriptions").upsert({
+                    author: currentAuthor || null,
+                    endpoint: subJson.endpoint,
+                    p256dh: subJson.keys.p256dh,
+                    auth: subJson.keys.auth
+                }, { onConflict: "endpoint" });
+                if (error) throw error;
+                showToast("🔔 ¡Notificaciones activadas!");
+            } catch (err) {
+                console.error("Error al suscribirse a push:", err);
+                showToast("❌ No se pudo activar las notificaciones");
+            }
+            await updatePushButtonLabel();
+        }
+
+        // Botón "Pensando en ti 💭" — dispara un push manual al otro
+        async function sendThinkingOfYou() {
+            try {
+                const { error } = await db.functions.invoke("send-push", {
+                    body: {
+                        table: "manual",
+                        record: { author: currentAuthor, body: `${currentAuthor || "Tu pareja"} está pensando en ti ahora mismo 💕` },
+                        excludeAuthor: currentAuthor || null
+                    }
+                });
+                if (error) throw error;
+                showToast("💭 Le avisamos que estás pensando en él/ella");
+            } catch (err) {
+                console.error("Error enviando 'pensando en ti':", err);
+                showToast("❌ No se pudo enviar, intenta de nuevo");
+            }
+        }
+
+        // Actualizar el label del botón cuando se abren los ajustes
+        const _origOpenSettings = openSettings;
+        window.openSettings = function () {
+            _origOpenSettings();
+            updatePushButtonLabel();
         };
     </script>
 </body>
