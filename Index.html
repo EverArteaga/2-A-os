@@ -3202,14 +3202,19 @@
         // Botón "Pensando en ti 💭" — dispara un push manual al otro
         async function sendThinkingOfYou() {
             try {
-                const { error } = await db.functions.invoke("send-push", {
-                    body: {
+                const res = await fetch("https://qxlfuexvnsopzajwycnz.supabase.co/functions/v1/send-push", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4bGZ1ZXh2bnNvcHphand5Y256Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0NjU2ODUsImV4cCI6MjA5MjA0MTY4NX0.3UpiBM7dbylmsIQV-O0I8Fs-akXHzvyVVC5w8P7EhlA"
+                    },
+                    body: JSON.stringify({
                         table: "manual",
                         record: { author: currentAuthor, body: `${currentAuthor || "Tu pareja"} está pensando en ti ahora mismo 💕` },
                         excludeAuthor: currentAuthor || null
-                    }
+                    })
                 });
-                if (error) throw error;
+                if (!res.ok) throw new Error("Status " + res.status);
                 showToast("💭 Le avisamos que estás pensando en él/ella");
             } catch (err) {
                 console.error("Error enviando 'pensando en ti':", err);
