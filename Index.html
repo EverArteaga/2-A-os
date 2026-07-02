@@ -3111,7 +3111,7 @@
         // ══════════════════════════════════════════════════════════════
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
-                navigator.serviceWorker.register("./sw.js").catch(err => {
+                navigator.serviceWorker.register(new URL("sw.js", location.href).href).catch(err => {
                     console.error("Error registrando service worker:", err);
                 });
             });
@@ -3176,7 +3176,7 @@
                     // SW no instalado o tardó mucho — intentar registrarlo ahora
                     showToast("⏳ Instalando service worker...");
                     try {
-                        reg = await navigator.serviceWorker.register("./sw.js");
+                        reg = await navigator.serviceWorker.register(new URL("sw.js", location.href).href);
                         await navigator.serviceWorker.ready;
                     } catch (swErr) {
                         showToast("❌ No se pudo instalar el service worker. ¿El archivo sw.js está en la raíz del repo?");
